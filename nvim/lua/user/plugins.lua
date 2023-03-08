@@ -30,25 +30,26 @@ use({
     as = 'catppuccin',
     config = function()
         vim.cmd('colorscheme catppuccin-mocha')
+
+        -- Hide the characters in FloatBorder
         vim.api.nvim_set_hl(0, 'FloatBorder', {
-            fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
-            bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+          fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+          bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
         })
 
-        -- Make the cursor line background invisible.
+        -- Make the StatusLineNonText background the same as StatusLine
+        vim.api.nvim_set_hl(0, 'StatusLineNonText', {
+          fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
+          bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
+        })
+
+        -- Hide the characters in CursorLineBg
         vim.api.nvim_set_hl(0, 'CursorLineBg', {
-            fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
-            bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+          fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+          bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
         })
 
         vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' })
-
-        vim.api.nvim_set_hl(0, 'StatusLineNonText', {
-            fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
-            bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
-        })
-
-        vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
     end,
 })
 
@@ -69,9 +70,6 @@ use('tpope/vim-sleuth')
 
 -- Allow plugins to enable repeating of commands.
 use('tpope/vim-repeat')
-
--- And more languages.
--- use('tpope/vim-polyglot')
 
 -- Navigate seamlessly between Vim windows and Tmux panes.
 use('christoomey/vim-tmux-navigator')
@@ -137,7 +135,7 @@ use({
     end,
 })
 
--- Fuzzy finder.
+-- -- Fuzzy finder.
 use({
     'nvim-telescope/telescope.nvim',
     requires = {
@@ -151,46 +149,20 @@ use({
     end,
 })
 
--- File tree sidebar.
-use({
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-        require('user/plugins/nvim-tree')
-    end,
-})
-
 --  A status line.
 use({
     'nvim-lualine/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-        require('user/plugins/lualine')
+        require('user.plugins.lualine')
     end,
 })
 
---  Display buffers as tabs.
-use({
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-        require('user/plugins/bufferline')
-    end,
-})
-
---  Display buffers as tabs.
+--  Automatically indent blank line.
 use({
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-        require('user/plugins/indent_blankline')
-    end,
-})
-
--- Add a dashboard.
-use({
-    'glepnir/dashboard-nvim',
-    config = function()
-        require('user/plugins/dashboard')
+        require('user.plugins.indent_blankline')
     end,
 })
 
