@@ -14,7 +14,7 @@ telescope.setup({
   defaults = {
     path_display = { truncate = 1 },
     prompt_prefix = '   ',
-    selection_caret = '  ',
+    selection_caret = '  ',
     layout_config = {
       prompt_position = 'top',
     },
@@ -26,7 +26,7 @@ telescope.setup({
         ['<C-Up>'] = actions.cycle_history_prev,
       },
     },
-    file_ignore_patterns = { '.git/' },
+    file_ignore_patterns = { '.git/', 'node_modules' },
   },
   pickers = {
     find_files = {
