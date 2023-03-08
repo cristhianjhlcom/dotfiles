@@ -192,21 +192,30 @@ use({
     requires = 'tpope/vim-rhubarb',
 })
 
--- Floating terminal.
+-- Toggle Term
 use({
-    'voldikss/vim-floaterm',
+    'akinsho/toggleterm.nvim',
+    tag = '*',
     config = function()
-        vim.g.floaterm_width = 0.8
-        vim.g.floaterm_height = 0.8
-        -- vim.g.floaterm_wintype = 'split'
-        vim.keymap.set('n', '<F1>', ':FloatermToggle<CR>')
-        vim.keymap.set('t', '<F1>', '<C-\\><C-n>:FloatermToggle<CR>')
-        vim.cmd([[
-            highlight link Floaterm CursorLine
-            highlight link FloatermBorder CursorLineBg
-        ]])
+        require('user.plugins.toggleterm')
     end,
 })
+
+-- Floating terminal.
+-- use({
+--     'voldikss/vim-floaterm',
+--     config = function()
+--         vim.g.floaterm_width = 0.8
+--         vim.g.floaterm_height = 0.8
+--         -- vim.g.floaterm_wintype = 'split'
+--         vim.keymap.set('n', '<F1>', ':FloatermToggle<CR>')
+--         vim.keymap.set('t', '<F1>', '<C-\\><C-n>:FloatermToggle<CR>')
+--         vim.cmd([[
+--             highlight link Floaterm CursorLine
+--             highlight link FloatermBorder CursorLineBg
+--         ]])
+--     end,
+-- })
 
 -- Treesitter configurations.
 use({
@@ -276,13 +285,27 @@ use({
     end,
 })
 
--- Testing helper.
+-- neovim neotest
 use({
-    'vim-test/vim-test',
-    config = function()
-        require('user/plugins/vim-test')
-    end,
+  "nvim-neotest/neotest",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "antoinemadec/FixCursorHold.nvim",
+    "olimorris/neotest-phpunit",
+  },
+  config = function()
+      require('user.plugins.neotest')
+  end,
 })
+
+-- Testing helper.
+-- use({
+--     'vim-test/vim-test',
+--     config = function()
+--         require('user/plugins/vim-test')
+--     end,
+-- })
 
 -- Automatically install plugins on first run
 if packer_bootstrap then
