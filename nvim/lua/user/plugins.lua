@@ -234,6 +234,7 @@ use({
 -- Language Server Protocol.
 use({
     'neovim/nvim-lspconfig',
+    -- 'williamboman/nvim-lsp-installer',
     requires = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
@@ -242,7 +243,7 @@ use({
         'jayp0521/mason-null-ls.nvim',
     },
     config = function()
-        require('user/plugins/lspconfig')
+        require('user.plugins.lspconfig')
     end,
 })
 
