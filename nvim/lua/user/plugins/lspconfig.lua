@@ -62,7 +62,8 @@ vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { buffer = 0, desc 
 vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
 -- Commands.
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting_seq_sync, {})
+vim.api.nvim_command('command! Format lua vim.lsp.buf.formatting_seq_sync()')
+-- vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting_seq_sync, {})
 
 -- Diagnostic configurations.
 vim.diagnostic.config({
