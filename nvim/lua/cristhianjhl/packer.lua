@@ -45,79 +45,14 @@ return require('packer').startup(function(use)
   use({
       'catppuccin/nvim',
       as = 'catppuccin',
-      config = function()
-        local status_ok, catppuccin = pcall(require, 'catppuccin')
-
-        if not status_ok then
-            print('Error loading catppuccin plugin.')
-        end
-
-        catppuccin.setup({
-            flavour = 'mocha',
-            background = {
-                light = 'latte',
-                dark = 'mocha',
-            },
-            transparent_background = true,
-            show_end_of_buffer = false,
-            term_colors = false,
-            no_italic = false,
-            no_underline = false,
-        })
-
-        vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-        vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      end,
   })
   use({
     'tanvirtin/monokai.nvim',
     as = 'monokai',
-    config = function()
-      local status_ok, monokai = pcall(require, 'monokai')
-      local palette = {
-        base2 = '#202026',
-        base3 = '#2E323C',
-        white = '#ffffff',
-        grey = '#7C7C7C',
-        black = '#272822',
-        green = '#8DD006',
-        yellow = '#E0D561',
-        orange = '#fd971f',
-        purple = '#9D65FF',
-        orange = '#FA8419',
-        red = '#F3044B',
-        pink = '#F4005F',
-        aqua = '#66d9ef',
-      }
-
-      if not status_ok then
-          print('Error loading monokai plugin.')
-      end
-
-      monokai.setup({
-        palette = palette,
-        italics = false,
-        TSInclude = {
-            fg = palette.aqua,
-        },
-        GitSignsAdd = {
-            fg = palette.green,
-            bg = palette.base2
-        },
-        GitSignsDelete = {
-            fg = palette.pink,
-            bg = palette.base2
-        },
-        GitSignsChange = {
-            fg = palette.orange,
-            bg = palette.base2
-        },
-      })
-      -- color = color or 'monokai_soda'
-      -- vim.cmd.colorscheme(color)
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-    end
+  })
+  use({
+    'wuelnerdotexe/vim-enfocado',
+    as = 'enfocado',
   })
   use('theprimeagen/harpoon')
   -- LSP Settings

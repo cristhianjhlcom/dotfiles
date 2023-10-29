@@ -16,7 +16,7 @@ telescope.setup({
         border = true,
         winblend = 0,
         layout_strategy = 'horizontal',
-        path_display = { 'smart' },
+        path_display = { truncate = 3 },
         prompt_prefix = '   ',
         selection_caret = '  ',
         layout_config = {
@@ -43,7 +43,7 @@ telescope.setup({
             previewer = false,
             layout_config = {
                 preview_cutoff = 1,
-                width = 0.35,
+                width = 0.65,
                 height = 0.65,
                 prompt_position = 'top',
             },
@@ -52,7 +52,7 @@ telescope.setup({
             previewer = false,
             layout_config = {
                 preview_cutoff = 1,
-                width = 0.45,
+                width = 0.55,
                 height = 0.65,
                 prompt_position = 'top',
             },
