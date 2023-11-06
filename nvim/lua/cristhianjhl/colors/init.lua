@@ -1,4 +1,4 @@
-local theme = 'enfocado'
+local theme = 'monakai'
 
 function ColorMyPencils(color)
   color = color or 'catppuccin'
