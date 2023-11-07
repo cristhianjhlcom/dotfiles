@@ -39,8 +39,7 @@ return require('packer').startup(function(use)
         vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
   })
-  -- TODO:
-  -- Favorite Theme
+  use({ 'jwalton512/vim-blade' })
   use({ 'nvim-tree/nvim-web-devicons' })
   use({
       'catppuccin/nvim',
