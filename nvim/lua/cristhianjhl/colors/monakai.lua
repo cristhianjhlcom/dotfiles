@@ -57,6 +57,9 @@ local function setup()
           },
       },
     })
+    vim.g.italics = false
+    vim.g.italic_keywords = false
+    vim.g.italic_functions = false
     vim.cmd.colorscheme('monokai')
 end
 

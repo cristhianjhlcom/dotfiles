@@ -5,7 +5,19 @@ if not status_ok then
 end
 
 require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'vimdoc', 'typescript', 'javascript', 'python' },
+    ensure_installed = {
+        'lua',
+        'vimdoc',
+        'typescript',
+        'javascript',
+        'python',
+        'tsx',
+        'php',
+        'css',
+        'html',
+        'json',
+        'rust',
+    },
     sync_install = false,
     auto_install = true,
     ignore_install = { },
