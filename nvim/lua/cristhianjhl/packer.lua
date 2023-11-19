@@ -39,7 +39,8 @@ return require('packer').startup(function(use)
         vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
   })
-  use({ 'jwalton512/vim-blade' })
+  -- TODO:
+  -- Favorite Theme
   use({ 'nvim-tree/nvim-web-devicons' })
   use({
       'catppuccin/nvim',
@@ -50,10 +51,15 @@ return require('packer').startup(function(use)
     as = 'monokai',
   })
   use({
+    'tomasr/molokai',
+    as = 'molokai',
+  })
+  use({
     'wuelnerdotexe/vim-enfocado',
     as = 'enfocado',
   })
   use('theprimeagen/harpoon')
+  use('jwalton512/vim-blade')
   -- LSP Settings
   use {
       'VonHeikemen/lsp-zero.nvim',

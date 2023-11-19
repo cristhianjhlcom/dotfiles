@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or 'monakai'
+    color = color or 'molokai'
     local ok, color_file = pcall(require, 'cristhianjhl.colors.'..color)
 
     if not ok then
