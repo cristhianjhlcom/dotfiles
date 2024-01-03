@@ -33,7 +33,7 @@ vim.opt.backupdir:remove('.') -- keep backups out of the current directory
 vim.opt.shortmess:append({ I = true }) -- disable the splash screen
 vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and allow tabbing the results to fully complete them
 vim.opt.completeopt = 'menuone,longest,preview'
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '0'
 vim.opt.signcolumn = 'no'
 vim.opt.showmode = true
 vim.opt.updatetime = 50 -- Set update time to 1ms longer than the default to prevent polyglot from changing it

@@ -23,11 +23,6 @@ return require('packer').startup(function(use)
   use('nelstrom/vim-visual-star-search')
   use('jessarcher/vim-heritage')
   use({
-      'lukas-reineke/indent-blankline.nvim',
-      main = 'ibl',
-      opts = {},
-  })
-  use({
     'famiu/bufdelete.nvim',
     config = function()
         vim.keymap.set('n', '<Leader>q', ':Bdelete<CR>')
