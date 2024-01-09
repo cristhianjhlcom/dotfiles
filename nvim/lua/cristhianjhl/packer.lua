@@ -23,12 +23,6 @@ return require('packer').startup(function(use)
   use('nelstrom/vim-visual-star-search')
   use('jessarcher/vim-heritage')
   use({
-    'famiu/bufdelete.nvim',
-    config = function()
-        vim.keymap.set('n', '<Leader>q', ':Bdelete<CR>')
-    end,
-  })
-  use({
     'sickill/vim-pasta',
     config = function()
         vim.g.pasta_disabled_filetypes = { 'fugitive' }
@@ -36,25 +30,15 @@ return require('packer').startup(function(use)
   })
   -- TODO:
   -- Favorite Theme
-  use({ 'nvim-tree/nvim-web-devicons' })
-  use({
-      'catppuccin/nvim',
-      as = 'catppuccin',
-  })
-  use({
-    'tanvirtin/monokai.nvim',
-    as = 'monokai',
-  })
-  use({
-    'tomasr/molokai',
-    as = 'molokai',
-  })
-  use({
-    'wuelnerdotexe/vim-enfocado',
-    as = 'enfocado',
-  })
+  use('AlexvZyl/nordic.nvim')
+  use('nvim-tree/nvim-web-devicons')
+  use('catppuccin/nvim')
+  use('tanvirtin/monokai.nvim')
+  use('tomasr/molokai')
+  use('wuelnerdotexe/vim-enfocado')
   use('theprimeagen/harpoon')
   use('jwalton512/vim-blade')
+  use('sts10/vim-mustard')
   -- LSP Settings
   use {
       'VonHeikemen/lsp-zero.nvim',

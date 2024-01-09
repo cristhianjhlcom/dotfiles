@@ -11,6 +11,7 @@ lsp.ensure_installed({
     'pyright',
     'tsserver',
     'html',
+    'phpactor',
 })
 
 lsp.nvim_workspace()
