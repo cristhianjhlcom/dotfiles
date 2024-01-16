@@ -9,7 +9,7 @@ require('nvim-treesitter.configs').setup({
         'lua',
         'luadoc',
         'c',
-        'vimdoc',
+        -- 'vimdoc',
         'typescript',
         'javascript',
         'python',
@@ -22,7 +22,7 @@ require('nvim-treesitter.configs').setup({
     },
     sync_install = false,
     auto_install = true,
-    ignore_install = {},
+    ignore_install = { 'vimdoc' },
     highlight = {
         enable = true,
         disable = {},
