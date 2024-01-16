@@ -39,31 +39,47 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('jwalton512/vim-blade')
   use('sts10/vim-mustard')
+  -- Mason Server Install.
+  use('williamboman/mason.nvim')
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('jayp0521/mason-null-ls.nvim')
+  -- Autocompletion
+  use('hrsh7th/nvim-cmp')
+  use('hrsh7th/cmp-buffer')
+  use('hrsh7th/cmp-path')
+  use('saadparwaiz1/cmp_luasnip')
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lua')
+  -- Snippets
+  use('L3MON4D3/LuaSnip')
+  use('rafamadriz/friendly-snippets')
   -- LSP Settings
-  use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v1.x',
-      requires = {
-          -- LSP Support
-          {'neovim/nvim-lspconfig'},
-          {'williamboman/mason.nvim'},
-          {'williamboman/mason-lspconfig.nvim'},
-          {'jose-elias-alvarez/null-ls.nvim'},
-          {'jayp0521/mason-null-ls.nvim'},
+  use({
+    "williamboman/nvim-lsp-installer",
+    "neovim/nvim-lspconfig",
+ })
+  -- use {
+  --     'neovim/nvim-lspconfig',
+  --     requires = {
+  --         -- LSP Support
+  --         {'williamboman/mason.nvim'},
+  --         {'williamboman/mason-lspconfig.nvim'},
+  --         {'jose-elias-alvarez/null-ls.nvim'},
+  --         {'jayp0521/mason-null-ls.nvim'},
 
-          -- Autocompletion
-          {'hrsh7th/nvim-cmp'},
-          {'hrsh7th/cmp-buffer'},
-          {'hrsh7th/cmp-path'},
-          {'saadparwaiz1/cmp_luasnip'},
-          {'hrsh7th/cmp-nvim-lsp'},
-          {'hrsh7th/cmp-nvim-lua'},
+  --         -- Autocompletion
+  --         {'hrsh7th/nvim-cmp'},
+  --         {'hrsh7th/cmp-buffer'},
+  --         {'hrsh7th/cmp-path'},
+  --         {'saadparwaiz1/cmp_luasnip'},
+  --         {'hrsh7th/cmp-nvim-lsp'},
+  --         {'hrsh7th/cmp-nvim-lua'},
 
-          -- Snippets
-          {'L3MON4D3/LuaSnip'},
-          {'rafamadriz/friendly-snippets'},
-      }
-  }
+  --         -- Snippets
+  --         {'L3MON4D3/LuaSnip'},
+  --         {'rafamadriz/friendly-snippets'},
+  --     }
+  -- }
   -- Git Settings & Git Signs
   use({
       'lewis6991/gitsigns.nvim',
@@ -81,9 +97,7 @@ return require('packer').startup(function(use)
   -- Treesitter Settings
   use({
       'nvim-treesitter/nvim-treesitter',
-      dependencies = {
-          'nvim-treesitter/nvim-treesitter-textobjects',
-      },
+      dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
       build = ':TSUpdate',
   })
 
