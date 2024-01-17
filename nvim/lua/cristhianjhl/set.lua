@@ -1,5 +1,6 @@
 vim.opt.shiftwidth = 4
 -- vim.opt.guicursor = ""
+vim.g.editorconfig = true
 vim.o.hlsearch = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
