@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
   })
   -- TODO:
   -- Favorite Theme
+  use('projekt0n/github-nvim-theme')
   use('AlexvZyl/nordic.nvim')
   use('nvim-tree/nvim-web-devicons')
   use('catppuccin/nvim')
