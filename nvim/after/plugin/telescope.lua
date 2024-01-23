@@ -17,8 +17,9 @@ telescope.setup({
         winblend = 0,
         layout_strategy = 'horizontal',
         path_display = { "smart" },
-        prompt_prefix = '🔍 ',
-        selection_caret = '> ',
+        prompt_prefix = ' ',
+        selection_caret = ' ',
+        multi_icon = ' ',
         layout_config = {
             preview_cutoff = 1,
             -- width = 0.65,

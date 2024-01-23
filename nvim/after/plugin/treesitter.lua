@@ -9,7 +9,6 @@ require('nvim-treesitter.configs').setup({
         'lua',
         'luadoc',
         'c',
-        -- 'vimdoc',
         'typescript',
         'javascript',
         'python',
