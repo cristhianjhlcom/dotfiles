@@ -1,5 +1,8 @@
+import random
+
 def greeting(name):
-    return f"Hello {name}"
+    random_number = random.randint(1, 10)
+    return f"Hello {name}, {random_number}"
 
 
 print(greeting(name='Hello'))

@@ -5,8 +5,7 @@ type User = {
 };
 
 const cristhian: User = {
-    name: 'Cristhian',
+    name: "Cristhian",
     age: 29,
     is_admin: false,
 };
-

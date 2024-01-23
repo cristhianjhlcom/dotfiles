@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use('sts10/vim-mustard')
   -- Mason Server Install.
   use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
   use('jayp0521/mason-null-ls.nvim')
   -- Autocompletion
@@ -55,10 +56,7 @@ return require('packer').startup(function(use)
   use('L3MON4D3/LuaSnip')
   use('rafamadriz/friendly-snippets')
   -- LSP Settings
-  use({
-    "williamboman/nvim-lsp-installer",
-    "neovim/nvim-lspconfig",
- })
+  use('neovim/nvim-lspconfig')
   -- use {
   --     'neovim/nvim-lspconfig',
   --     requires = {

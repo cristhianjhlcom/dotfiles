@@ -1,4 +1,4 @@
-const person: string = 'Cristhian';
+const person: string = "Cristhian";
 
 function gretting(name: string): string {
     return `Hello ${name}, how are you?`;

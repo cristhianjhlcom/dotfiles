@@ -1,7 +1,11 @@
 local status_ok, lsp = pcall(require, 'lspconfig')
+local mason = require('mason')
+local mason_lsp = require('mason-lspconfig')
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local servers = { 'clangd', 'pyright', 'tsserver', 'phpactor', 'html', 'tailwindcss' }
 
 if not status_ok then
@@ -32,6 +36,21 @@ local on_attach = function(_, buffer)
     vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format({ async = true }) end, options)
 end
 
+mason.setup({
+    ui = {
+        icons = {
+            package_installed = "󰗠",
+            package_pending = "",
+            package_uninstalled = "",
+        },
+    },
+})
+
+mason_lsp.setup({
+    ensure_installed = servers,
+    automatic_installation = true,
+})
+
 for _, lsp_idx in ipairs(servers) do
     lsp[lsp_idx].setup({
         capabilities = capabilities,
@@ -39,7 +58,6 @@ for _, lsp_idx in ipairs(servers) do
     })
 end
 
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -62,17 +80,7 @@ cmp.setup({
     },
 })
 
--- lsp.set_preferences({
---     suggest_lsp_servers = false,
---     sign_icons = {
---         error = '',
---         warn = '',
---         hint = '',
---         info = ''
---     }
--- })
-
-vim.api.nvim_command('command! Format lua vim.lsp.buf.formatting_seq_sync()')
+vim.api.nvim_command('command! Format lua vim.lsp.buf.format()')
 
 vim.diagnostic.config({
     virtual_text = false,
