@@ -23,15 +23,18 @@ local function setup()
                 bold = true,
             },
             StatusLine = {
-                fg = palette.white0,
+                fg = palette.black2,
+                bg = palette.orange.dim,
                 italic = true,
+                bold = true,
             },
             StatusLineNC = {
                 fg = palette.orange.dim,
                 italic = true,
             },
             LineNr = {
-                fg = palette.white2,
+                fg = palette.gray5,
+                bg = nil,
             },
         }
     })
