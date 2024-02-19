@@ -28,13 +28,26 @@ local function setup()
                 italic = true,
                 bold = true,
             },
+            LineNrAbove = {
+                fg = palette.gray2,
+                bg = nil,
+                italic = false,
+                bold = false,
+            },
+            LineNrBelow = {
+                fg = palette.gray2,
+                bg = nil,
+                italic = false,
+                bold = false,
+            },
             StatusLineNC = {
                 fg = palette.orange.dim,
                 italic = true,
             },
             LineNr = {
-                fg = palette.gray5,
+                fg = palette.orange.dim,
                 bg = nil,
+                bold = true,
             },
         }
     })
