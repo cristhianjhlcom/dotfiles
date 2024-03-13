@@ -4,52 +4,38 @@ if not status_ok then
     print('Error loading github plugin.')
 end
 
-local function setup(bg)
+local function setup()
     colorscheme = 'github_light'
     github.setup({
         options = {
             transparent = true,
             styles = {
+                functions = 'bold',
+                variables = 'bold',
                 comments = 'italic',
                 keywords = 'bold',
                 types = 'bold',
             },
         },
-        -- override = {
-        --     Visual = {
-        --         fg = palette.black0,
-        --         bg = palette.yellow.base,
-        --         italic = true,
-        --         bold = true,
-        --     },
-        --     StatusLine = {
-        --         fg = palette.black2,
-        --         bg = palette.orange.dim,
-        --         italic = true,
-        --         bold = true,
-        --     },
-        --     LineNrAbove = {
-        --         fg = palette.gray2,
-        --         bg = nil,
-        --         italic = false,
-        --         bold = false,
-        --     },
-        --     LineNrBelow = {
-        --         fg = palette.gray2,
-        --         bg = nil,
-        --         italic = false,
-        --         bold = false,
-        --     },
-        --     StatusLineNC = {
-        --         fg = palette.orange.dim,
-        --         italic = true,
-        --     },
-        --     LineNr = {
-        --         fg = palette.orange.dim,
-        --         bg = nil,
-        --         bold = true,
-        --     },
-        -- }
+        override = {
+            LineNrAbove = {
+                fg = Gray,
+                bg = nil,
+                italic = false,
+                bold = false,
+            },
+            LineNrBelow = {
+                fg = Gray,
+                bg = nil,
+                italic = false,
+                bold = false,
+            },
+            LineNr = {
+                fg = Red,
+                bg = nil,
+                bold = true,
+            },
+        }
     })
 
     vim.cmd.colorscheme(colorscheme)

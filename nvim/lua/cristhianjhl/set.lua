@@ -1,4 +1,5 @@
 vim.opt.shiftwidth = 4
+vim.g.have_nerd_font = false
 -- vim.opt.guicursor = ""
 vim.g.editorconfig = true
 vim.o.hlsearch = false
@@ -17,7 +18,7 @@ vim.opt.wrap = false
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.list = true -- enable the below list chars
 -- vim.opt.listchars = { tab = '▸ ', trail = '·' }
-vim.opt.listchars = {eol = ' ', tab = '▸ ', trail = '·'}
+vim.opt.listchars = {eol = ' ', tab = '▸ ', trail = '·', nbsp = '␣'}
 vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
 vim.opt.mouse = 'a' -- enable mouse for all modes
 vim.opt.splitbelow = true

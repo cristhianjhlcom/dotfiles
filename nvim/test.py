@@ -5,4 +5,4 @@ def greeting(name):
     return f"Hello {name}, {random_number}"
 
 
-print(greeting(name='Hello'))
+print(greeting("Cristian"))
