@@ -1,10 +1,4 @@
-local status_ok, treesitter = pcall(require, 'nvim-treesitter')
-
-if not status_ok then
-    print('Error on nvim treesitter call')
-end
-
-treesitter.setup({
+require('nvim-treesitter.configs').setup({
     ensure_installed = {
         'lua',
         'luadoc',
@@ -28,9 +22,5 @@ treesitter.setup({
     highlight = {
         enable = true,
         disable = {},
-        additional_vim_regex_highlighting = false,
     },
-    config = function(_, opts)
-        require('nvim-treesitter.configs').setup(opts)
-    end,
 })
