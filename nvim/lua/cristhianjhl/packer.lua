@@ -56,26 +56,26 @@ return require('packer').startup(function(use)
       },
     },
   })
-  -- Mason Server Install.
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
-  use('jose-elias-alvarez/null-ls.nvim')
-  use('jayp0521/mason-null-ls.nvim')
-  use('WhoIsSethDaniel/mason-tool-installer.nvim')
-  use({'j-hui/fidget.nvim', opts = {}})
-  use({'folke/neodev.nvim', opts = {}})
-  -- Snippets
-  use('L3MON4D3/LuaSnip')
-  use('rafamadriz/friendly-snippets')
-  -- Autocompletion
-  use('hrsh7th/cmp-buffer')
-  use('hrsh7th/cmp-path')
-  use('saadparwaiz1/cmp_luasnip')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('hrsh7th/cmp-nvim-lua')
-  use('hrsh7th/nvim-cmp')
-  -- LSP Settings
-  use('neovim/nvim-lspconfig')
+  -- -- Mason Server Install.
+  -- use('williamboman/mason.nvim')
+  -- use('williamboman/mason-lspconfig.nvim')
+  -- use('WhoIsSethDaniel/mason-tool-installer.nvim')
+  -- use('jose-elias-alvarez/null-ls.nvim')
+  -- use('jayp0521/mason-null-ls.nvim')
+  -- use({'j-hui/fidget.nvim', opts = {}})
+  -- use({'folke/neodev.nvim', opts = {}})
+  -- -- Snippets
+  -- use('L3MON4D3/LuaSnip')
+  -- use('rafamadriz/friendly-snippets')
+  -- -- Autocompletion
+  -- use('hrsh7th/cmp-buffer')
+  -- use('hrsh7th/cmp-path')
+  -- use('saadparwaiz1/cmp_luasnip')
+  -- use('hrsh7th/cmp-nvim-lsp')
+  -- use('hrsh7th/cmp-nvim-lua')
+  -- use('hrsh7th/nvim-cmp')
+  -- -- LSP Settings
+  -- use('neovim/nvim-lspconfig')
   -- Git Settings & Git Signs
   use({
       'lewis6991/gitsigns.nvim',
@@ -94,7 +94,22 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter-textobjects')
   use({'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'})
   use("nvim-treesitter/playground")
-
+  -- LSP Settings & Tools
+  use({
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+  })
+  -- CMP Settings
+  use({
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+  })
 
   if packer_bootstrap then
     require('packer').sync()

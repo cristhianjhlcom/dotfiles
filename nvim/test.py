@@ -6,3 +6,4 @@ def greeting(name):
 
 
 print(greeting("Cristian"))
+print(greeting("Jesus"))

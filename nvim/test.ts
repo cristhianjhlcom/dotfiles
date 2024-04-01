@@ -9,3 +9,5 @@ const cristhian: User = {
     age: 29,
     is_admin: false,
 };
+
+console.log(cristhian);
