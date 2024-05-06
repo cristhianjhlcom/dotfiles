@@ -1,8 +1,8 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   use({
     'sickill/vim-pasta',
     config = function()
-        vim.g.pasta_disabled_filetypes = { 'fugitive' }
+      vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
   })
   -- TODO:
@@ -41,21 +41,23 @@ return require('packer').startup(function(use)
   use('jwalton512/vim-blade')
   use('sts10/vim-mustard')
   -- Autformat.
-  use({
-    'stevearc/conform.nvim',
-    opts = {
-      notify_on_error = false,
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
-      formatters_by_ft = {
-        lua = {'stylua'},
-        python = {'isort', 'black'},
-        javascript = {{'prettierd', 'prettier'}},
-      },
-    },
-  })
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
+  -- use({
+  --   'stevearc/conform.nvim',
+  --   opts = {
+  --     notify_on_error = false,
+  --     format_on_save = {
+  --       timeout_ms = 500,
+  --       lsp_fallback = true,
+  --     },
+  --     formatters_by_ft = {
+  --       lua = { 'stylua' },
+  --       python = { 'isort', 'black' },
+  --       javascript = { { 'prettierd', 'prettier' } },
+  --     },
+  --   },
+  -- })
   -- -- Mason Server Install.
   -- use('williamboman/mason.nvim')
   -- use('williamboman/mason-lspconfig.nvim')
@@ -78,8 +80,8 @@ return require('packer').startup(function(use)
   -- use('neovim/nvim-lspconfig')
   -- Git Settings & Git Signs
   use({
-      'lewis6991/gitsigns.nvim',
-      requires = 'nvim-lua/plenary.nvim',
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
   })
   -- Telescope Settings
   use({
@@ -92,7 +94,7 @@ return require('packer').startup(function(use)
   })
   -- Treesitter Settings
   use('nvim-treesitter/nvim-treesitter-textobjects')
-  use({'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'})
+  use({ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' })
   use("nvim-treesitter/playground")
   -- LSP Settings & Tools
   use({

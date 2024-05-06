@@ -76,7 +76,8 @@ vim.keymap.set('n', '<Leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<Leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<Leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<Leader>sb', require('telescope.builtin').buffers, { desc = '[S]earch [B]uffers' })
-vim.keymap.set('n', '<Leader>s.', require('telescope.builtin').oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+vim.keymap.set('n', '<Leader>s.', require('telescope.builtin').oldfiles,
+    { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<Leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, {})
 
