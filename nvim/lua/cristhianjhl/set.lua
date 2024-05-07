@@ -1,9 +1,10 @@
-vim.opt.shiftwidth = 4
 vim.g.have_nerd_font = false
+vim.g.editorconfig = true
 -- vim.opt.guicursor = ""
 vim.g.editorconfig = true
 vim.o.hlsearch = false
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
