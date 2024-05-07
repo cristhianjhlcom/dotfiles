@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  biogoo = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/biogoo",
+    url = "https://github.com/bdesham/biogoo"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -104,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["conform.nvim"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/conform.nvim",
+    url = "https://github.com/stevearc/conform.nvim"
+  },
   ["github-nvim-theme"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
@@ -118,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -143,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/nordic.nvim",
     url = "https://github.com/AlexvZyl/nordic.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   nvim = {
     loaded = true,
@@ -193,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["prettier.nvim"] = {
-    loaded = true,
-    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/prettier.nvim",
-    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ripgrep = {
     loaded = true,

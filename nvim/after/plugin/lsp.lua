@@ -1,4 +1,7 @@
-require("mason").setup()
+local status_mason_ok, mason = pcall(require, "mason")
+if (not status_mason_ok) then return end
+
+mason.setup()
 
 local servers = {
     clangd = {},
@@ -12,12 +15,15 @@ local servers = {
 }
 
 local ensure_installed = vim.tbl_keys(servers or {})
+local status_mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 
-require("mason-lspconfig").setup({
+if (not status_mason_lspconfig_ok) then return end
+
+mason_lspconfig.setup({
     ensure_installed = ensure_installed,
 })
 
-require("mason").setup({
+mason.setup({
     ui = {
         icons = {
             package_installed = "󰗠",
@@ -33,11 +39,12 @@ local on_attach = function(client, bufnr)
         vim.api.nvim_create_autocmd('BufWritePre', {
             group = vim.api.nvim_create_augroup('Format', { clear = true }),
             buffer = bufnr,
-            callback = function()
-                vim.lsp.buf.format({
-                    bufnr = bufnr,
-                    async = true,
-                })
+            callback = function(args)
+                require('conform').format({ bufnr = args.buf })
+                -- vim.lsp.buf.format({
+                --     bufnr = bufnr,
+                --     async = true,
+                -- })
             end,
         })
     end
@@ -104,4 +111,3 @@ cmp.setup({
         { name = "path" },     -- file system paths
     },
 })
-

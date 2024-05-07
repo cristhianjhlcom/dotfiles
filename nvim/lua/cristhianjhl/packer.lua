@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
   })
   -- TODO:
   -- Favorite Theme
+  use('bdesham/biogoo')
   use('projekt0n/github-nvim-theme')
   use('AlexvZyl/nordic.nvim')
   use('nvim-tree/nvim-web-devicons')
@@ -41,43 +42,14 @@ return require('packer').startup(function(use)
   use('jwalton512/vim-blade')
   use('sts10/vim-mustard')
   -- Autformat.
-  use('jose-elias-alvarez/null-ls.nvim')
-  use('MunifTanjim/prettier.nvim')
-  -- use({
-  --   'stevearc/conform.nvim',
-  --   opts = {
-  --     notify_on_error = false,
-  --     format_on_save = {
-  --       timeout_ms = 500,
-  --       lsp_fallback = true,
-  --     },
-  --     formatters_by_ft = {
-  --       lua = { 'stylua' },
-  --       python = { 'isort', 'black' },
-  --       javascript = { { 'prettierd', 'prettier' } },
-  --     },
-  --   },
-  -- })
-  -- -- Mason Server Install.
-  -- use('williamboman/mason.nvim')
-  -- use('williamboman/mason-lspconfig.nvim')
-  -- use('WhoIsSethDaniel/mason-tool-installer.nvim')
   -- use('jose-elias-alvarez/null-ls.nvim')
-  -- use('jayp0521/mason-null-ls.nvim')
-  -- use({'j-hui/fidget.nvim', opts = {}})
-  -- use({'folke/neodev.nvim', opts = {}})
-  -- -- Snippets
-  -- use('L3MON4D3/LuaSnip')
-  -- use('rafamadriz/friendly-snippets')
-  -- -- Autocompletion
-  -- use('hrsh7th/cmp-buffer')
-  -- use('hrsh7th/cmp-path')
-  -- use('saadparwaiz1/cmp_luasnip')
-  -- use('hrsh7th/cmp-nvim-lsp')
-  -- use('hrsh7th/cmp-nvim-lua')
-  -- use('hrsh7th/nvim-cmp')
-  -- -- LSP Settings
-  -- use('neovim/nvim-lspconfig')
+  -- use('MunifTanjim/prettier.nvim')
+  use('stevearc/conform.nvim')
+  -- Lualine Install.
+  use({
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+  })
   -- Git Settings & Git Signs
   use({
     'lewis6991/gitsigns.nvim',

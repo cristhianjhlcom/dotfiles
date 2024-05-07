@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 local function setup()
-    colorscheme = 'github_light'
+    local colorscheme = 'github_light'
     github.setup({
         options = {
             transparent = true,
@@ -19,19 +19,19 @@ local function setup()
         },
         override = {
             LineNrAbove = {
-                fg = Gray,
+                fg = 'Gray',
                 bg = nil,
                 italic = false,
                 bold = false,
             },
             LineNrBelow = {
-                fg = Gray,
+                fg = 'Gray',
                 bg = nil,
                 italic = false,
                 bold = false,
             },
             LineNr = {
-                fg = Red,
+                fg = 'Red',
                 bg = nil,
                 bold = true,
             },
