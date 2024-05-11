@@ -10,14 +10,13 @@ ts.setup({
         'javascript',
         'tsx',
         'python',
-        'tsx',
         'php',
         'css',
         'html',
         'json',
         'rust',
     },
-    auto_tag = {
+    autotag = {
         enable = true,
     },
     sync_install = false,

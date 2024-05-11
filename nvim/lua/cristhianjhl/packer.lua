@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
   -- use('jose-elias-alvarez/null-ls.nvim')
   -- use('MunifTanjim/prettier.nvim')
   use('stevearc/conform.nvim')
+  use('windwp/nvim-ts-autotag')
   -- Lualine Install.
   use({
     'nvim-lualine/lualine.nvim',
@@ -66,7 +67,10 @@ return require('packer').startup(function(use)
   })
   -- Treesitter Settings
   use('nvim-treesitter/nvim-treesitter-textobjects')
-  use({ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' })
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  })
   use("nvim-treesitter/playground")
   -- LSP Settings & Tools
   use({

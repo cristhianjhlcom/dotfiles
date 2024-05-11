@@ -1,27 +1,6 @@
 local status_mason_ok, mason = pcall(require, "mason")
+
 if (not status_mason_ok) then return end
-
-mason.setup()
-
-local servers = {
-    clangd = {},
-    pyright = {},
-    phpactor = {},
-    tsserver = {},
-    html = {},
-    tailwindcss = {},
-    cssls = {},
-    lua_ls = {},
-}
-
-local ensure_installed = vim.tbl_keys(servers or {})
-local status_mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-
-if (not status_mason_lspconfig_ok) then return end
-
-mason_lspconfig.setup({
-    ensure_installed = ensure_installed,
-})
 
 mason.setup({
     ui = {
@@ -31,6 +10,57 @@ mason.setup({
             package_uninstalled = "",
         },
     },
+})
+
+local servers = {
+    clangd = {},
+    pyright = {
+        cmd = { 'pyright-langserver', '--stdio' },
+        filetypes = { 'python' },
+    },
+    phpactor = {
+        cmd = { 'phpactor', 'language-server' },
+        filetypes = { 'php' },
+    },
+    tsserver = {},
+    html = {},
+    tailwindcss = {},
+    cssls = {
+        cmd = { 'vscode-css-language-server', '--stdio' },
+        filetypes = { 'css', 'scss', 'less' },
+        init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
+        single_file_support = true,
+        settings = {
+            css = { validate = true },
+            scss = { validate = true },
+            less = { validate = true },
+        },
+    },
+    lua_ls = {
+        settings = {
+            Lua = {
+                diagnostic = {
+                    globals = { 'vim' },
+                },
+                workspace = {
+                    library = vim.api.nvim_get_runtime_file("", true)
+                },
+            },
+        },
+    },
+    emmet_ls = {
+        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "blade", "vue" },
+    },
+    jsonls = {},
+}
+
+local ensure_installed = vim.tbl_keys(servers or {})
+local status_mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+
+if (not status_mason_lspconfig_ok) then return end
+
+mason_lspconfig.setup({
+    ensure_installed = ensure_installed,
 })
 
 local on_attach = function(client, bufnr)
@@ -79,7 +109,7 @@ end
 
 require("lspconfig").tsserver.setup({
     on_attach = on_attach,
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" },
 })
 
@@ -94,6 +124,10 @@ cmp.setup({
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
         end,
+    },
+    window = {
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
