@@ -24,6 +24,7 @@ vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
 vim.opt.mouse = 'a'                     -- enable mouse for all modes
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.inccommand = 'split'
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.clipboard = 'unnamedplus'      -- Use Linux system clipboard

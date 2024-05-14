@@ -14,43 +14,14 @@ mason.setup({
 
 local servers = {
     clangd = {},
-    pyright = {
-        cmd = { 'pyright-langserver', '--stdio' },
-        filetypes = { 'python' },
-    },
-    phpactor = {
-        cmd = { 'phpactor', 'language-server' },
-        filetypes = { 'php' },
-    },
+    pyright = {},
+    phpactor = {},
     tsserver = {},
     html = {},
     tailwindcss = {},
-    cssls = {
-        cmd = { 'vscode-css-language-server', '--stdio' },
-        filetypes = { 'css', 'scss', 'less' },
-        init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
-        single_file_support = true,
-        settings = {
-            css = { validate = true },
-            scss = { validate = true },
-            less = { validate = true },
-        },
-    },
-    lua_ls = {
-        settings = {
-            Lua = {
-                diagnostic = {
-                    globals = { 'vim' },
-                },
-                workspace = {
-                    library = vim.api.nvim_get_runtime_file("", true)
-                },
-            },
-        },
-    },
-    emmet_ls = {
-        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "blade", "vue" },
-    },
+    cssls = {},
+    lua_ls = {},
+    emmet_ls = {},
     jsonls = {},
 }
 
@@ -85,7 +56,10 @@ local on_attach = function(client, bufnr)
 
     local builtin = require('telescope.builtin')
 
-    map('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
+    -- map('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
+    map('gd', function()
+        builtin.lsp_definitions({ jump_type = 'vsplit' })
+    end, '[G]oto [D]efinition')
     map('gr', builtin.lsp_references, '[G]oto [R]eferences')
     map('gI', builtin.lsp_implementations, '[G]oto [I]mplementation')
     map('<Leader>D', builtin.lsp_type_definitions, 'Type [D]efinition')
@@ -98,7 +72,10 @@ local on_attach = function(client, bufnr)
     map('<Leader>e', vim.diagnostic.open_float, 'Open Float Diagnostic')
     map('[d', vim.diagnostic.goto_prev, '[[][D] Goto Prev')
     map(']d', vim.diagnostic.goto_next, '[]][D] Goto Next')
-    map('<Leader>f', function() vim.lsp.buf.format({ async = true }) end, 'Format')
+    map('<Leader>f', function()
+        require('conform').format({ bufnr = bufnr })
+        -- vim.lsp.buf.format({ async = true })
+    end, 'Format')
 end
 
 for server, _ in pairs(servers) do
