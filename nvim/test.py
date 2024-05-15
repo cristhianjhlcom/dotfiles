@@ -1,10 +1,11 @@
 import random
 
-def greeting(name):
+def greet(name):
     random_number = random.randint(1, 10)
     return f"Hello {name}, {random_number}"
 
 
-print(greeting("Cristian"))
-print(greeting("Jesus"))
-print(greeting("Ihasaku"))
+print(greet("Cristian"))
+print(greet("Jesus"))
+print(greet("Ihasaku"))
+
