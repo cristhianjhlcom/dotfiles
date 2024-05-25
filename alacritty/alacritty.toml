@@ -1,0 +1,17 @@
+[font]
+normal = { family = "Inconsolata LGC Nerd Font Propo", style = "Regular" }
+italic = { family = "Inconsolata LGC Nerd Font Propo", style = "Italic" }
+bold_italic = { family = "Inconsolata LGC Nerd Font Propo", style = "BoldItalic" }
+size = 14.5
+
+[mouse]
+# enabled = true
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "K", mods = "Control|Shift", action = "IncreaseFontSize" },
+    { key = "J", mods = "Control|Shift", action = "DecreaseFontSize" },
+]
