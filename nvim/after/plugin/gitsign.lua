@@ -1,7 +1,8 @@
 local status_ok, gitsigns = pcall(require, 'gitsigns')
 
 if not status_ok then
-  print('Error loading gitsigns')
+  print('Error loading gitsigns!')
+  print('Hello there');
 end
 
 gitsigns.setup({
@@ -20,6 +21,7 @@ gitsigns.setup({
     vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
     vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
     vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
+    vim.keymap.set('n', 'gt', ':Gitsigns toggle_current_line_blame<CR>')
     vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
   end,
 })

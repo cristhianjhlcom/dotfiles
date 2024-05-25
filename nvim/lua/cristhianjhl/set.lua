@@ -1,6 +1,6 @@
 vim.g.have_nerd_font = false
 vim.g.editorconfig = true
--- vim.opt.guicursor = ""
+vim.g.netrw_banner = 0
 vim.g.editorconfig = true
 vim.o.hlsearch = true
 vim.opt.tabstop = 4
@@ -18,7 +18,6 @@ vim.opt.smartcase = true
 vim.opt.wrap = false
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.list = true        -- enable the below list chars
--- vim.opt.listchars = { tab = '▸ ', trail = '·' }
 vim.opt.listchars = { eol = ' ', tab = '▸ ', trail = '·', nbsp = '␣' }
 vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
 vim.opt.mouse = 'a'                     -- enable mouse for all modes
@@ -39,7 +38,7 @@ vim.opt.wildmode =
 'longest:full,full'                    -- complete the longest common match, and allow tabbing the results to fully complete them
 vim.opt.completeopt = 'menuone,longest,preview'
 vim.opt.colorcolumn = '0'
-vim.opt.signcolumn = 'no'
+vim.opt.signcolumn = 'yes'
 vim.opt.showmode = true
 vim.opt.updatetime = 50    -- Set update time to 1ms longer than the default to prevent polyglot from changing it
 vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
