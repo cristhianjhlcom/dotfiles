@@ -13,10 +13,14 @@ mason.setup({
 })
 
 local servers = {
+    bashls = {},
     clangd = {},
     pyright = {},
     phpactor = {},
-    tsserver = {},
+    tsserver = {
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+        cmd = { "typescript-language-server", "--stdio" },
+    },
     html = {},
     tailwindcss = {},
     cssls = {},
@@ -34,21 +38,20 @@ mason_lspconfig.setup({
     ensure_installed = ensure_installed,
 })
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 local on_attach = function(client, bufnr)
     -- Format on Save.
-    if client.server_capabilities.documentFormattingProvider then
-        vim.api.nvim_create_autocmd('BufWritePre', {
-            group = vim.api.nvim_create_augroup('Format', { clear = true }),
-            buffer = bufnr,
-            callback = function(args)
-                require('conform').format({ bufnr = args.buf })
-                -- vim.lsp.buf.format({
-                --     bufnr = bufnr,
-                --     async = true,
-                -- })
-            end,
-        })
-    end
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        group = vim.api.nvim_create_augroup('Format', { clear = true }),
+        buffer = bufnr,
+        callback = function(args)
+            require('conform').format({ bufnr = args.buf })
+            -- vim.lsp.buf.format({
+            --     bufnr = bufnr,
+            --     async = true,
+            -- })
+        end,
+    })
 
     local map = function(keys, func, desc)
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
@@ -78,17 +81,14 @@ local on_attach = function(client, bufnr)
     end, 'Format')
 end
 
-for server, _ in pairs(servers) do
+for server, config in pairs(servers) do
     require("lspconfig")[server].setup({
-        on_attach = on_attach
+        capabilities = capabilities,
+        filetypes = config.filetypes,
+        on_attach = on_attach,
+        settings = config.settings,
     })
 end
-
-require("lspconfig").tsserver.setup({
-    on_attach = on_attach,
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-    cmd = { "typescript-language-server", "--stdio" },
-})
 
 local _, cmp = pcall(require, "cmp")
 
