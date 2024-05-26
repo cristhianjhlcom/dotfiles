@@ -1,7 +1,8 @@
 local status_ok, telescope = pcall(require, 'telescope')
 
 if not status_ok then
-    print('Error in Telescope require pcall')
+    print('Error calling telescope package.')
+    return
 end
 
 local pickers = require('telescope.pickers')
@@ -82,11 +83,11 @@ vim.keymap.set('n', '<Leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers'
 vim.keymap.set('n', '<Leader>s.', builtin.oldfiles,
     { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<Leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = 'Search Git Files' })
 
 vim.keymap.set('n', '<Leader>/', function()
     builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
-        winblend = 10,
+        winblend = 0,
         previewer = false,
     }))
 end, { desc = '[/] Fuzzily search in current buffer' })

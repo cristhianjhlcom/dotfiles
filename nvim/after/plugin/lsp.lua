@@ -22,6 +22,8 @@ local servers = {
         cmd = { "typescript-language-server", "--stdio" },
     },
     html = {},
+    volar = {},
+    svelte = {},
     tailwindcss = {},
     cssls = {},
     lua_ls = {},
@@ -103,8 +105,8 @@ cmp.setup({
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion

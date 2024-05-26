@@ -40,7 +40,7 @@ vim.opt.shortmess:append "c"      -- disable the splash screen
 vim.opt.wildmode =
 'longest:full,full'               -- complete the longest common match, and allow tabbing the results to fully complete them
 vim.opt.wildignore = { '*.o', '*.a', '__pycache__' }
-vim.opt.completeopt = { 'menuone', 'noselect' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.colorcolumn = '0'
 vim.opt.signcolumn = 'yes'
 vim.opt.showmode = true
