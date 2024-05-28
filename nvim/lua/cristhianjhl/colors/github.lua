@@ -4,8 +4,11 @@ if not status_ok then
     print('Error loading github plugin.')
 end
 
+local palette = require('github-theme.palette').load('github_dark_dimmed')
+
 local function setup()
     local colorscheme = 'github_dark'
+
     github.setup({
         options = {
             transparent = true,
@@ -13,29 +16,38 @@ local function setup()
                 functions = 'bold',
                 variables = 'bold',
                 comments = 'italic',
-                keywords = 'bold',
+                constants = 'bold,italic',
+                strings = 'NONE',
+                keywords = 'NONE',
                 types = 'bold',
             },
         },
-        override = {
-            LineNrAbove = {
-                fg = 'Gray',
-                bg = nil,
-                italic = false,
-                bold = false,
+        groups = {
+            all = {
+                LineNrAbove = {
+                    fg = 'Gray',
+                    bg = nil,
+                    italic = false,
+                    bold = false,
+                },
+                LineNrBelow = {
+                    fg = 'Gray',
+                    bg = nil,
+                    italic = false,
+                    bold = false,
+                },
+                LineNr = {
+                    fg = palette.blue.base,
+                    bg = nil,
+                    bold = true,
+                },
+                StatusLineNC = {
+                    fg = palette.blue.base,
+                    bg = nil,
+                    italic = true,
+                },
             },
-            LineNrBelow = {
-                fg = 'Gray',
-                bg = nil,
-                italic = false,
-                bold = false,
-            },
-            LineNr = {
-                fg = 'Gray',
-                bg = nil,
-                bold = true,
-            },
-        }
+        },
     })
 
     vim.cmd.colorscheme(colorscheme)
