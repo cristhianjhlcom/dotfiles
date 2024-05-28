@@ -16,7 +16,12 @@ local servers = {
     bashls = {},
     clangd = {},
     pyright = {},
-    phpactor = {},
+    phpactor = {
+        init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+        },
+    },
     tsserver = {
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         cmd = { "typescript-language-server", "--stdio" },
