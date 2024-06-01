@@ -4,7 +4,7 @@ if not status_ok then
     print('Error loading github plugin.')
 end
 
-local palette = require('github-theme.palette').load('github_dark_dimmed')
+local palette = require('github-theme.palette').load('github_dark')
 
 local function setup()
     local colorscheme = 'github_dark'
@@ -41,10 +41,28 @@ local function setup()
                     bg = nil,
                     bold = true,
                 },
+                Normal = {
+                    fg = palette.fg,
+                    bg = palette.bg,
+                },
+                Visual = {
+                    bg = palette.blue.base,
+                },
+                Search = {
+                    fg = palette.fg,
+                    bg = palette.blue.bright,
+                },
+                IncSearch = {
+                    fg = palette.fg,
+                    bg = palette.blue.bright,
+                },
+                StatusLine = {
+                    fg = palette.fg,
+                    bg = palette.bg_light,
+                },
                 StatusLineNC = {
-                    fg = palette.blue.base,
-                    bg = nil,
-                    italic = true,
+                    fg = palette.fg_dark,
+                    bg = palette.bg_light,
                 },
             },
         },
