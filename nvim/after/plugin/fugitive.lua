@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<Leader>gs', vim.cmd.Git)
+vim.keymap.set('n', '<Leader>ggs', vim.cmd.Git)
 
 local cristhian_fugitive = vim.api.nvim_create_augroup('Cristhian_Fugitive', {})
 
@@ -14,17 +14,17 @@ autocmd('BufWinEnter', {
 
     local bufnr = vim.api.nvim_get_current_buf()
     local opts = {buffer = bufnr, remap = false}
-    vim.keymap.set("n", "<Leader>p", function()
+    vim.keymap.set("n", "<Leader>ggp", function()
       vim.cmd.Git('push')
     end, opts)
 
     -- rebase always
-    vim.keymap.set("n", "<Leader>P", function()
+    vim.keymap.set("n", "<Leader>ggpl", function()
       vim.cmd.Git({'pull',  '--rebase'})
     end, opts)
 
     -- NOTE: It allows me to easily set the branch i am pushing and any tracking
     -- needed if i did not set the branch up correctly
-    vim.keymap.set("n", "<Leader>t", ":Git push -u origin ", opts);
+    vim.keymap.set("n", "<Leader>ggpu", ":Git push -u origin ", opts);
   end
 })

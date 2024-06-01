@@ -229,6 +229,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-dotenv"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-dotenv",
+    url = "https://github.com/tpope/vim-dotenv"
+  },
   ["vim-enfocado"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-enfocado",
