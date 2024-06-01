@@ -2,13 +2,20 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-rm -rf $HOME/.tmux.conf
-ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-
 mkdir -p $HOME/.config
 
-rm -rf $HOME/.config/nvim
-ln -s $DOTFILES/nvim $HOME/.config/nvim
+create_symlink() {
+    local source_file=$1
+    local target_file=$2
 
-rm -rf $HOME/.config/phpactor
-ln -s $DOTFILES/phpactor $HOME/.config/phpactor
+    if [ -e "$target_file" ]; then
+        rm -rf $target_file
+    fi
+
+    ln -sf "$source_file" "$target_file"
+}
+
+create_symlink "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"
+create_symlink "$DOTFILES/nvim" "$HOME/.config/nvim"
+create_symlink "$DOTFILES/phpactor" "$HOME/.config/phpactor"
+create_symlink "$DOTFILES/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
