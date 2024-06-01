@@ -46,15 +46,15 @@ local function setup()
                     bg = palette.bg,
                 },
                 Visual = {
-                    bg = palette.blue.base,
+                    bg = palette.yellow.base,
                 },
                 Search = {
                     fg = palette.fg,
-                    bg = palette.blue.bright,
+                    bg = palette.yellow.base,
                 },
                 IncSearch = {
                     fg = palette.fg,
-                    bg = palette.blue.bright,
+                    bg = palette.yellow.base,
                 },
                 StatusLine = {
                     fg = palette.fg,
