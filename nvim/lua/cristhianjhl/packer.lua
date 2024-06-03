@@ -89,6 +89,11 @@ return require('packer').startup(function(use)
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
   })
+  -- NerdTree.
+  use({
+    'preservim/nerdtree',
+    requires = { 'ryanoasis/vim-devicons', opt = true },
+  })
 
   if packer_bootstrap then
     require('packer').sync()

@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/monokai.nvim",
     url = "https://github.com/tanvirtin/monokai.nvim"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
   ["nordic.nvim"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/nordic.nvim",
@@ -228,6 +233,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/opt/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-dotenv"] = {
     loaded = true,
