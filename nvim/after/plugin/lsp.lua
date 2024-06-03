@@ -118,12 +118,18 @@ for server, config in pairs(servers) do
 end
 
 local _, cmp = pcall(require, "cmp")
+local defaults = require("cmp.config.default")()
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 vim.opt.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
+    auto_brackets = {},
+    completion = {
+        completeopt = "menu,menuone,noinsert",
+    },
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
@@ -134,8 +140,8 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- previous suggestion
+        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
@@ -148,4 +154,10 @@ cmp.setup({
         { name = "buffer" },   -- text within the current buffer
         { name = "path" },     -- file system paths
     },
+    experimental = {
+        ghost_text = {
+            hl_group = "CmpGhostText",
+        },
+    },
+    sorting = defaults.sorting,
 })

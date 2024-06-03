@@ -14,6 +14,10 @@ ts.setup({
         'css',
         'html',
         'json',
+        'toml',
+        'xml',
+        'yaml',
+        'diff',
         'rust',
     },
     autotag = {
