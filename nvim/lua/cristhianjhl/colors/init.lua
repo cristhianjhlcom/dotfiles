@@ -1,5 +1,5 @@
 function ColorMyPencils(color, bg)
-  color = color or 'github'
+  color = color or 'nordic'
   bg = bg and 'dark' or 'light'
   local ok, color_file = pcall(require, 'cristhianjhl.colors.' .. color)
 

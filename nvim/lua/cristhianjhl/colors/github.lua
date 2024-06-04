@@ -45,17 +45,17 @@ local function setup()
                     fg = palette.fg,
                     bg = palette.bg,
                 },
-                Visual = {
-                    bg = palette.yellow.base,
-                },
-                Search = {
-                    fg = palette.fg,
-                    bg = palette.yellow.base,
-                },
-                IncSearch = {
-                    fg = palette.fg,
-                    bg = palette.yellow.base,
-                },
+                -- Visual = {
+                --     bg = palette.yellow.base,
+                -- },
+                -- Search = {
+                --     fg = palette.fg,
+                --     bg = palette.yellow.base,
+                -- },
+                -- IncSearch = {
+                --     fg = palette.fg,
+                --     bg = palette.yellow.base,
+                -- },
                 StatusLine = {
                     fg = palette.fg,
                     bg = palette.bg_light,

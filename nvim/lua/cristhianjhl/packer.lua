@@ -20,7 +20,12 @@ return require('packer').startup(function(use)
   use('tpope/vim-surround')
   use('tpope/vim-repeat')
   use('tpope/vim-dotenv')
-  use('tpope/vim-vinegar')
+  use({
+    'stevearc/oil.nvim',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+    },
+  })
   use('farmergreg/vim-lastplace')
   use('nelstrom/vim-visual-star-search')
   use('jessarcher/vim-heritage')
