@@ -2,11 +2,18 @@ local status_ok, lualine = pcall(require, "lualine")
 
 if (not status_ok) then return end
 
+local function file_icon()
+	local filename = vim.fn.expand('%:t')
+	local extension = vim.fn.expand('%:e')
+	local icon = require'nvim-web-devicons'.get_icon(filename, extension, {default = true})
+	return icon
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = 'auto',
-		component_separators = { left = '', right = '' },
+		component_separators = { left = '', right = '' },
 		section_separators = { left = '', right = '' },
 		disabled_filetypes = {
 			statusline = {},
@@ -22,10 +29,10 @@ lualine.setup({
 		},
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { 'branch', 'diagnostics' },
-		lualine_c = { { 'filename', path = 1 } },
-		lualine_x = { 'filetype' },
+		lualine_a = { 'mode' },
+		lualine_b = { },
+		lualine_c = { file_icon, { 'filename', path = 1 } },
+		lualine_x = { 'branch', 'diagnostics' },
 		lualine_y = { 'progress' },
 		lualine_z = { 'location' }
 	},
