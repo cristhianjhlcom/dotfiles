@@ -7,7 +7,7 @@ end
 local palette = require('github-theme.palette').load('github_dark')
 
 local function setup()
-    local colorscheme = 'github_dark'
+    local colorscheme = 'github_dark_default'
 
     github.setup({
         options = {
