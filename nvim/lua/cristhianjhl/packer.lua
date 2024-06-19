@@ -51,7 +51,10 @@ return require('packer').startup(function(use)
   -- Autformat.
   -- use('jose-elias-alvarez/null-ls.nvim')
   -- use('MunifTanjim/prettier.nvim')
-  use('stevearc/conform.nvim')
+  use({
+    'stevearc/conform.nvim',
+    commit = '0b6ef80',
+  })
   use('windwp/nvim-ts-autotag')
   -- Lualine Install.
   use({

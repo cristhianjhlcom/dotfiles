@@ -1,3 +1,7 @@
+import = [
+  "~/.config/alacritty/alacritty/catppuccin-mocha.toml"
+]
+
 [font]
 normal = { family = "Inconsolata LGC Nerd Font Propo", style = "Regular" }
 italic = { family = "Inconsolata LGC Nerd Font Propo", style = "Italic" }
