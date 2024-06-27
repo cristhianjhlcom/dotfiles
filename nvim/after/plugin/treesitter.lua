@@ -32,7 +32,7 @@ ts.setup({
     },
     highlight = {
         enable = true,
-        disable = {},
+        disable = { 'vimdoc' },
     },
 })
 

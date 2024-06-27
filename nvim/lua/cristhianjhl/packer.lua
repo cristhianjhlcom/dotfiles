@@ -35,7 +35,10 @@ return require('packer').startup(function(use)
       vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
   })
-  -- TODO:
+  -- Laravel/Livewire Plugins.
+  use('phpactor/phpactor')
+  use('jwalton512/vim-blade')
+
   -- Favorite Theme
   use('bdesham/biogoo')
   use('projekt0n/github-nvim-theme')
@@ -46,7 +49,6 @@ return require('packer').startup(function(use)
   use('tomasr/molokai')
   use('wuelnerdotexe/vim-enfocado')
   use('theprimeagen/harpoon')
-  use('jwalton512/vim-blade')
   use('sts10/vim-mustard')
   -- Autformat.
   -- use('jose-elias-alvarez/null-ls.nvim')
@@ -55,7 +57,7 @@ return require('packer').startup(function(use)
     'stevearc/conform.nvim',
     commit = '0b6ef80',
   })
-  use('windwp/nvim-ts-autotag')
+  -- use('windwp/nvim-ts-autotag')
   -- Lualine Install.
   use({
     'nvim-lualine/lualine.nvim',
@@ -98,6 +100,8 @@ return require('packer').startup(function(use)
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
   })
+  -- Snippets Plugins.
+  use('rafamadriz/friendly-snippets')
   -- NerdTree.
   use({
     'preservim/nerdtree',

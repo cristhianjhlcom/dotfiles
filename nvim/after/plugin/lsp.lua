@@ -16,18 +16,18 @@ local servers = {
     bashls = {},
     clangd = {},
     pyright = {},
-    intelephense = {
-        flags = {
-            debounce_text_changes = 150,
-        },
-        settings = {
-            intelephense = {
-                files = {
-                    maxSize = 5000000,
-                },
-            },
-        },
-    },
+    -- intelephense = {
+    --     flags = {
+    --         debounce_text_changes = 150,
+    --     },
+    --     settings = {
+    --         intelephense = {
+    --             files = {
+    --                 maxSize = 5000000,
+    --             },
+    --         },
+    --     },
+    -- },
     phpactor = {
         cmd = { "phpactor", "language-server" },
         filetypes = { "php" },
@@ -35,9 +35,6 @@ local servers = {
             return vim.loop.cwd()
         end,
         init_options = {
-            ["language_server.diagnostics_on_update"] = false,
-            ["language_server.diagnostics_on_open"] = false,
-            ["lanaguge_server.diagnostics_on_save"] = false,
             ["language_server_phpstan.enabled"] = false,
             ["language_server_psalm.enabled"] = false,
         },
@@ -155,9 +152,9 @@ cmp.setup({
         { name = "path" },     -- file system paths
     },
     experimental = {
-        ghost_text = {
-            hl_group = "CmpGhostText",
-        },
+        -- ghost_text = {
+        --     hl_group = "CmpGhostText",
+        -- },
     },
     sorting = defaults.sorting,
 })
