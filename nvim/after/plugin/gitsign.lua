@@ -13,20 +13,19 @@ gitsigns.setup({
     changedelete = { text = '~' },
     untracked    = { text = '┆' },
   },
-  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
-  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
-  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
-  word_diff  = true, -- Toggle with `:Gitsigns toggle_word_diff`
-  current_line_blame = true,
-  sign_priority = 20,
-  on_attach = function(_)
-    vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
-    vim.keymap.set('n', '[n', ':Gitsigns prev_hunk<CR>')
-    vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
-    vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
-    vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
-    vim.keymap.set('n', 'gt', ':Gitsigns toggle_current_line_blame<CR>')
-    vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
-  end,
-
+  -- signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+  -- numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
+  -- linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+  -- word_diff  = true, -- Toggle with `:Gitsigns toggle_word_diff`
+  -- current_line_blame = true,
+  -- sign_priority = 20,
+  -- on_attach = function(_)
+  --   vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
+  --   vim.keymap.set('n', '[n', ':Gitsigns prev_hunk<CR>')
+  --   vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
+  --   vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
+  --   vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
+  --   vim.keymap.set('n', 'gt', ':Gitsigns toggle_current_line_blame<CR>')
+  --   vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
+  -- end,
 })

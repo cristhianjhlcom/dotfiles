@@ -3,9 +3,10 @@ import = [
 ]
 
 [font]
-normal = { family = "Inconsolata LGC Nerd Font Propo", style = "Regular" }
-italic = { family = "Inconsolata LGC Nerd Font Propo", style = "Italic" }
-bold_italic = { family = "Inconsolata LGC Nerd Font Propo", style = "BoldItalic" }
+normal = { family = "InconsolataNerdFont", style = "Regular" }
+italic = { family = "InconsolataNerdFont", style = "Italic" }
+bold = { family = "InconsolataNerdFont", style = "Bold" }
+bold_italic = { family = "InconsolataNerdFont", style = "BoldItalic" }
 size = 14.5
 
 [mouse]
@@ -19,3 +20,60 @@ bindings = [
     { key = "K", mods = "Control|Shift", action = "IncreaseFontSize" },
     { key = "J", mods = "Control|Shift", action = "DecreaseFontSize" },
 ]
+
+[clipboard]
+copy = { command = "xclip -selection clipboard" }
+paste = { command = "xclip -selection clipboard -o" }
+
+[window]
+dimensions = { columns = 80, lines = 24 }
+position = { x = 0.5, y = 0.5 }
+startup_mode = "windowed"
+
+[scrolling]
+history = 10000
+auto_scroll = true
+
+[colors]
+primary:
+  background = '0x1E1E2E'
+  foreground = '0xD0D0D0'
+
+normal:
+  black = '0x1E1E2E'
+  red = '0xF7768E'
+  green = '0x9ECE6A'
+  yellow = '0xE0AF68'
+  blue = '0x7AA2F7'
+  magenta = '0xBB9AF7'
+  cyan = '0x7DCFFF'
+  white = '0xA9B1D6'
+
+bright:
+  black = '0x414868'
+  red = '0xF7768E'
+  green = '0x9ECE6A'
+  yellow = '0xE0AF68'
+  blue = '0x7AA2F7'
+  magenta = '0xBB9AF7'
+  cyan = '0x7DCFFF'
+  white = '0xC0CAF5'
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[shell]
+program = "/bin/zsh"
+args = ["--login"]
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[decorations]
+button_color = '0x444B6A'
+drag_area_width = 16
+
+[hinting]
+enabled = true
