@@ -1,12 +1,12 @@
 import = [
-  "~/.config/alacritty/alacritty/github-dark.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
 [font]
-normal = { family = "InconsolataNerdFont", style = "Regular" }
-italic = { family = "InconsolataNerdFont", style = "Italic" }
-bold = { family = "InconsolataNerdFont", style = "Bold" }
-bold_italic = { family = "InconsolataNerdFont", style = "BoldItalic" }
+normal = { family = "Inconsolata Nerd Font", style = "Regular" }
+italic = { family = "Inconsolata Nerd Font", style = "Italic" }
+bold = { family = "Inconsolata Nerd Font", style = "Bold" }
+bold_italic = { family = "Inconsolata Nerd Font", style = "BoldItalic" }
 size = 14.5
 
 [mouse]
@@ -22,6 +22,7 @@ bindings = [
 ]
 
 [clipboard]
+enable = true
 copy = { command = "xclip -selection clipboard" }
 paste = { command = "xclip -selection clipboard -o" }
 
@@ -33,31 +34,6 @@ startup_mode = "windowed"
 [scrolling]
 history = 10000
 auto_scroll = true
-
-[colors]
-primary:
-  background = '0x1E1E2E'
-  foreground = '0xD0D0D0'
-
-normal:
-  black = '0x1E1E2E'
-  red = '0xF7768E'
-  green = '0x9ECE6A'
-  yellow = '0xE0AF68'
-  blue = '0x7AA2F7'
-  magenta = '0xBB9AF7'
-  cyan = '0x7DCFFF'
-  white = '0xA9B1D6'
-
-bright:
-  black = '0x414868'
-  red = '0xF7768E'
-  green = '0x9ECE6A'
-  yellow = '0xE0AF68'
-  blue = '0x7AA2F7'
-  magenta = '0xBB9AF7'
-  cyan = '0x7DCFFF'
-  white = '0xC0CAF5'
 
 [cursor]
 style = "Block"
