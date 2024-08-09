@@ -23,3 +23,5 @@ create_symlink "$DOTFILES/alacritty/alacritty.yml" "$HOME/.config/alacritty/alac
 create_symlink "$DOTFILES/alacritty/catppuccin-mocha.toml" "$HOME/.config/alacritty/catppuccin-mocha.toml"
 create_symlink "$DOTFILES/alacritty/github-dark.toml" "$HOME/.config/alacritty/github-dark.toml"
 create_symlink "$DOTFILES/alacritty/nordic.toml" "$HOME/.config/alacritty/nordic.toml"
+create_symlink "$DOTFILES/i3/config" "$HOME/.config/i3/config"
+create_symlink "$DOTFILES/i3status/config" "$HOME/.config/i3status/config"
