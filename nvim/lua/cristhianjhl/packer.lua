@@ -55,7 +55,6 @@ return require('packer').startup(function(use)
   -- use('MunifTanjim/prettier.nvim')
   use({
     'stevearc/conform.nvim',
-    commit = '0b6ef80',
   })
   -- use('windwp/nvim-ts-autotag')
   -- Lualine Install.

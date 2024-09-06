@@ -17,7 +17,7 @@ gitsigns.setup({
   -- numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
   -- linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
   -- word_diff  = true, -- Toggle with `:Gitsigns toggle_word_diff`
-  -- current_line_blame = true,
+  current_line_blame = true,
   -- sign_priority = 20,
   -- on_attach = function(_)
   --   vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')

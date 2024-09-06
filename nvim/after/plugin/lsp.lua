@@ -16,33 +16,12 @@ local servers = {
     bashls = {},
     clangd = {},
     pyright = {},
-    -- intelephense = {
-    --     flags = {
-    --         debounce_text_changes = 150,
-    --     },
-    --     settings = {
-    --         intelephense = {
-    --             files = {
-    --                 maxSize = 5000000,
-    --             },
-    --         },
-    --     },
+    phpactor = {},
+    -- tsserver = {
+    --     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    --     cmd = { "typescript-language-server", "--stdio" },
     -- },
-    phpactor = {
-        cmd = { "phpactor", "language-server" },
-        filetypes = { "php" },
-        root_dir = function (_)
-            return vim.loop.cwd()
-        end,
-        init_options = {
-            ["language_server_phpstan.enabled"] = false,
-            ["language_server_psalm.enabled"] = false,
-        },
-    },
-    tsserver = {
-        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-        cmd = { "typescript-language-server", "--stdio" },
-    },
+    ts_ls = {},
     html = {},
     volar = {},
     svelte = {},
