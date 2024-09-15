@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
     end,
   })
   -- Laravel/Livewire Plugins.
-  use('phpactor/phpactor')
+  -- use('phpactor/phpactor')
   use('jwalton512/vim-blade')
 
   -- Favorite Theme

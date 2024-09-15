@@ -3,6 +3,7 @@
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 mkdir -p $HOME/.config
+mkdir -p $HOME/.config/alacritty/themes
 
 create_symlink() {
     local source_file=$1
@@ -19,9 +20,7 @@ create_symlink "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"
 create_symlink "$DOTFILES/nvim" "$HOME/.config/nvim"
 create_symlink "$DOTFILES/phpactor" "$HOME/.config/phpactor"
 create_symlink "$DOTFILES/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
-create_symlink "$DOTFILES/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
-create_symlink "$DOTFILES/alacritty/catppuccin-mocha.toml" "$HOME/.config/alacritty/catppuccin-mocha.toml"
-create_symlink "$DOTFILES/alacritty/github-dark.toml" "$HOME/.config/alacritty/github-dark.toml"
-create_symlink "$DOTFILES/alacritty/nordic.toml" "$HOME/.config/alacritty/nordic.toml"
+create_symlink "$DOTFILES/alacritty/themes/catppuccin-frappe.toml" "$HOME/.config/alacritty/themes/catppuccin-frappe.toml"
+create_symlink "$DOTFILES/alacritty/themes/catppuccin-mocha.toml" "$HOME/.config/alacritty/themes/catppuccin-mocha.toml"
 create_symlink "$DOTFILES/i3/config" "$HOME/.config/i3/config"
 create_symlink "$DOTFILES/i3status/config" "$HOME/.config/i3status/config"

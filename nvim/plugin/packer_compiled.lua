@@ -209,11 +209,6 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  phpactor = {
-    loaded = true,
-    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/phpactor",
-    url = "https://github.com/phpactor/phpactor"
-  },
   playground = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/playground",

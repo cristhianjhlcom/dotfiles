@@ -17,19 +17,22 @@ local servers = {
     clangd = {},
     pyright = {},
     phpactor = {},
-    -- tsserver = {
-    --     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-    --     cmd = { "typescript-language-server", "--stdio" },
-    -- },
-    ts_ls = {},
+    ts_ls = {
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    },
     html = {},
+    eslint = {},
     volar = {},
     svelte = {},
     tailwindcss = {},
     cssls = {},
+    stimulus_ls = {},
     lua_ls = {},
     emmet_ls = {},
+    emmet_language_server = {},
+    gopls = {},
     jsonls = {},
+    zls = {},
 }
 
 local ensure_installed = vim.tbl_keys(servers or {})
@@ -39,6 +42,7 @@ if (not status_mason_lspconfig_ok) then return end
 
 mason_lspconfig.setup({
     ensure_installed = ensure_installed,
+    automatic_installation = true,
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

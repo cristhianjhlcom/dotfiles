@@ -1,3 +1,4 @@
+vim.opt.cursorline = true
 vim.g.have_nerd_font = false
 vim.g.editorconfig = true
 vim.g.netrw_banner = 0
@@ -7,6 +8,8 @@ vim.g.netrw_mouse = 2
 vim.o.hlsearch = true
 vim.opt.colorcolumn = "100"
 vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#060606]]
+vim.opt.cursorline = true
+vim.optpath = ""..vim.fn.getcwd()..","..vim.fn.getcwd().."/"
 vim.opt.conceallevel = 0
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -39,11 +42,12 @@ vim.opt.swapfile = false
 vim.opt.backup = false            -- automatically save a backup file
 vim.opt.writebackup = false
 vim.opt.backupdir:remove('.')     -- keep backups out of the current directory
-vim.opt.shortmess:append "c"      -- disable the splash screen
+-- vim.opt.shortmess:append "c"      -- disable the splash screen
+vim.opt.shortmess = 'I'
 vim.opt.wildmode =
 'longest:full,full'               -- complete the longest common match, and allow tabbing the results to fully complete them
 vim.opt.wildignore = { '*.o', '*.a', '__pycache__' }
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert', 'preview' }
 vim.opt.signcolumn = 'yes'
 vim.opt.showmode = true
 vim.opt.updatetime = 100 -- Set update time to 1ms longer than the default to prevent polyglot from changing it
