@@ -16,7 +16,7 @@ create_symlink() {
     ln -sf "$source_file" "$target_file"
 }
 
-create_symlink "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"
+create_symlink "$DOTFILES/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 create_symlink "$DOTFILES/nvim" "$HOME/.config/nvim"
 create_symlink "$DOTFILES/phpactor" "$HOME/.config/phpactor"
 create_symlink "$DOTFILES/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"

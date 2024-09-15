@@ -5,8 +5,6 @@ general {
 }
 
 order += "battery 0"
-order += "memory"
-order += "tztime local"
 
 battery 0 {
         format = "%status %percentage %remaining %emptytime"
@@ -17,16 +15,5 @@ battery 0 {
         status_full = "☻ FULL"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
-}
-
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
-        hide_if_equals_localtime = true
-}
-
-memory {
-        format = "%used"
-        threshold_degraded = "10%"
-        format_degraded = "MEMORY: %free"
 }
 
