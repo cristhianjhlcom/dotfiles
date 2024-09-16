@@ -1,20 +1,60 @@
 import = [
-  "~/.config/alacritty/themes/catppuccin-frappe.toml"
+  "~/.config/alacritty/themes/dreamsof.toml"
 ]
 
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
 [font]
-# normal.family = "Inconsolata LGC Nerd Font"
-normal.family = "JetBrains Mono NL Nerd Font Propo"
-offset.x = 0
-offset.y = 0
-size = 12.5
+size = 18
+
+[font.bold]
+family = "JetBrains Mono NL Nerd Font Propo"
+style = "bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "JetBrains Mono NL Nerd Font Propo"
+
+[font.normal]
+family = "JetBrains Mono NL Nerd Font Propo"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
 
 [window]
 padding.x = 2
 padding.y = 2
 dynamic_padding = true
-decorations = "None"
+decorations = "Full"
+dynamic_title = true
+startup_mode = "Maximized"
 opacity = 0.95
+
+[window.dimensions]
+columns = 160
+lines = 80
+
+[shell]
+program = "/bin/zsh"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
 
 [keyboard]
 bindings = [
@@ -27,3 +67,14 @@ bindings = [
 [selection]
 save_to_clipboard = true
 
+[cursor]
+blink_interval = 500
+blink_timeout = 5
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "off"
+shape = "Block"
+
+[env]
+ENV = "xterm-256color"
