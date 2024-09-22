@@ -125,6 +125,20 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
+        ["<Tab>"] = function (fallback)
+            if require("luasnip").jumpable(1) then
+                require("luasnip").jump(1)
+            else
+                fallback()
+            end
+        end,
+        ["<S-Tab>"] = function (fallback)
+            if require("luasnip").jumpable(-1) then
+                require("luasnip").jump(-1)
+            else
+                fallback()
+            end
+        end,
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- previous suggestion
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
