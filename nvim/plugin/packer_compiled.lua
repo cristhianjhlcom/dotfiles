@@ -179,6 +179,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -209,6 +214,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  phpactor = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/phpactor",
+    url = "https://github.com/phpactor/phpactor"
+  },
   playground = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/playground",
@@ -224,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/ripgrep",
     url = "https://github.com/BurntSushi/ripgrep"
   },
+  tagbar = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/tagbar",
+    url = "https://github.com/preservim/tagbar"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -238,12 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
-  },
-  ["vim-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/opt/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-dotenv"] = {
     loaded = true,
@@ -280,6 +289,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-pasta",
     url = "https://github.com/sickill/vim-pasta"
+  },
+  ["vim-php-cs-fixer"] = {
+    loaded = true,
+    path = "/home/cristhianjhl/.local/share/nvim/site/pack/packer/start/vim-php-cs-fixer",
+    url = "https://github.com/stephpy/vim-php-cs-fixer"
   },
   ["vim-repeat"] = {
     loaded = true,

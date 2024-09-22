@@ -31,8 +31,8 @@ lualine.setup({
 	sections = {
 		lualine_a = { 'mode' },
 		lualine_b = { },
-		lualine_c = { file_icon, { 'filename', path = 1 } },
-		lualine_x = { 'branch', 'diagnostics' },
+		lualine_c = { 'branch', { 'filename', path = 1 } },
+		lualine_x = { file_icon, 'diagnostics' },
 		lualine_y = { 'progress' },
 		lualine_z = { 'location' }
 	},

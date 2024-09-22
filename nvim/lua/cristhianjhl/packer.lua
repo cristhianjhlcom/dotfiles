@@ -35,8 +35,11 @@ return require('packer').startup(function(use)
       vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
   })
-  -- Laravel/Livewire Plugins.
-  -- use('phpactor/phpactor')
+  -- Laravel/Livewire/PHP Plugins.
+  use('mfussenegger/nvim-dap')
+  use('preservim/tagbar')
+  use('stephpy/vim-php-cs-fixer')
+  use('phpactor/phpactor')
   use('jwalton512/vim-blade')
 
   -- Favorite Theme
@@ -104,7 +107,7 @@ return require('packer').startup(function(use)
   -- NerdTree.
   use({
     'preservim/nerdtree',
-    requires = { 'ryanoasis/vim-devicons', opt = true },
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
   })
 
   if packer_bootstrap then

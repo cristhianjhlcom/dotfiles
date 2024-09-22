@@ -33,6 +33,7 @@ ts.setup({
     highlight = {
         enable = true,
         disable = { 'vimdoc' },
+        additional_vim_regex_highlighting = false,
     },
 })
 

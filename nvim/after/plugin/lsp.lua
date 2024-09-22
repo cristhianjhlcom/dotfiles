@@ -16,7 +16,11 @@ local servers = {
     bashls = {},
     clangd = {},
     pyright = {},
-    phpactor = {},
+    phpactor = {
+        cmd = {"phpactor", "language-server"},
+        filetypes = {"php"},
+        root_dir = require("lspconfig").util.root_pattern("composer.json", ".git"),
+    },
     ts_ls = {
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     },
@@ -101,6 +105,7 @@ local _, cmp = pcall(require, "cmp")
 local defaults = require("cmp.config.default")()
 
 require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip/loaders/from_lua").load({paths = "~/.config/nvim/lua/snippets"})
 
 vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 vim.opt.completeopt = "menu,menuone,noselect"
