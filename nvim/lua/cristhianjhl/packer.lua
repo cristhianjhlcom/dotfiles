@@ -41,6 +41,15 @@ return require('packer').startup(function(use)
   use('stephpy/vim-php-cs-fixer')
   use('phpactor/phpactor')
   use('jwalton512/vim-blade')
+  use('V13Axel/neotest-pest')
+  use('nvim-neotest/nvim-nio')
+  use('nvim-neotest/neotest', {
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+    },
+  })
 
   -- Favorite Theme
   use('bdesham/biogoo')
