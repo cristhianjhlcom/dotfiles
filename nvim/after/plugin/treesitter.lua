@@ -32,8 +32,8 @@ ts.setup({
     },
     highlight = {
         enable = true,
-        disable = { 'vimdoc', 'blade' },
-        additional_vim_regex_highlighting = { "php" },
+        disable = { 'vimdoc'},
+        additional_vim_regex_highlighting = true,
     },
 })
 
