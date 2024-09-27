@@ -35,6 +35,11 @@ return require('packer').startup(function(use)
       vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
   })
+  -- Treesitter Settings
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  })
   -- Laravel/Livewire/PHP Plugins.
   use('mfussenegger/nvim-dap')
   use('preservim/tagbar')
@@ -43,10 +48,10 @@ return require('packer').startup(function(use)
   use('jwalton512/vim-blade')
   use('V13Axel/neotest-pest')
   use('nvim-neotest/nvim-nio')
+  use('EmranMR/tree-sitter-blade')
   use('nvim-neotest/neotest', {
     requires = {
       "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
     },
   })
@@ -88,13 +93,6 @@ return require('packer').startup(function(use)
       'BurntSushi/ripgrep',
     },
   })
-  -- Treesitter Settings
-  use('nvim-treesitter/nvim-treesitter-textobjects')
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-  })
-  use("nvim-treesitter/playground")
   -- LSP Settings & Tools
   use({
     'williamboman/mason.nvim',

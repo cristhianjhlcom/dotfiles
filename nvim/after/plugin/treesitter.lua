@@ -27,15 +27,28 @@ ts.setup({
     auto_install = true,
     ignore_install = { 'vimdoc' },
     indent = {
-        enable = true,
+        enable = false,
         disabled = {},
     },
     highlight = {
         enable = true,
-        disable = { 'vimdoc' },
-        additional_vim_regex_highlighting = false,
+        disable = { 'vimdoc', 'blade' },
+        additional_vim_regex_highlighting = { "php" },
     },
 })
 
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+local parsers = require("nvim-treesitter.parsers").get_parser_configs()
+
+parsers.tsx = {
+    filetype_to_parsername = { "javascript", "typescript.tsx" }
+}
+
+parsers.blade = {
+    install_info = {
+        url = "https://github.com/EmranMR/tree-sitter-blade",
+        files = { "src/parser.c" },
+        branch = "main",
+        revision =  "01e5550cb60ef3532ace0c6df0480f6f406113ff",
+    },
+    filetype = "blade",
+}

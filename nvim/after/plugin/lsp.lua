@@ -17,9 +17,13 @@ local servers = {
     clangd = {},
     pyright = {},
     phpactor = {
-        cmd = {"phpactor", "language-server"},
-        filetypes = {"php"},
-        root_dir = require("lspconfig").util.root_pattern("composer.json", ".git"),
+        cmd = { "phpactor", "language-server" },
+        filetypes = { "php", "blade" },
+        -- root_dir = require("lspconfig").util.root_pattern("composer.json", ".git"),
+        init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+        },
     },
     ts_ls = {
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
@@ -32,14 +36,15 @@ local servers = {
     cssls = {},
     stimulus_ls = {},
     lua_ls = {},
-    emmet_ls = {},
-    emmet_language_server = {},
+    emmet_ls = {
+        filetypes = { "html", "php", "blade" },
+    },
     gopls = {},
     jsonls = {},
     zls = {},
 }
 
-local ensure_installed = vim.tbl_keys(servers or {})
+local ensure_installed = vim.tbl_keys(servers)
 local status_mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 
 if (not status_mason_lspconfig_ok) then return end
@@ -105,7 +110,7 @@ local _, cmp = pcall(require, "cmp")
 local defaults = require("cmp.config.default")()
 
 require("luasnip/loaders/from_vscode").lazy_load()
-require("luasnip/loaders/from_lua").load({paths = "~/.config/nvim/lua/snippets"})
+require("luasnip/loaders/from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
 
 vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 vim.opt.completeopt = "menu,menuone,noselect"
@@ -125,14 +130,14 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ["<Tab>"] = function (fallback)
+        ["<Tab>"] = function(fallback)
             if require("luasnip").jumpable(1) then
                 require("luasnip").jump(1)
             else
                 fallback()
             end
         end,
-        ["<S-Tab>"] = function (fallback)
+        ["<S-Tab>"] = function(fallback)
             if require("luasnip").jumpable(-1) then
                 require("luasnip").jump(-1)
             else

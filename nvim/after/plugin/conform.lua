@@ -16,7 +16,8 @@ conform.setup({
 		typescriptreact = { { "prettierd", "prettier" } },
 		css = { { "prettierd", "prettier" } },
 		c = { "clang_format" },
-		php = { "pint", "php_cs_fixer" },
+		php = { "pint" },
+		-- blade = { "prettierd" },
 		["*"] = { "trim_whitespace" },
 	},
 	format_on_save = {
