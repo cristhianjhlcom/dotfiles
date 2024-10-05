@@ -46,8 +46,8 @@ opacity = 0.95
 columns = 160
 lines = 80
 
-[shell]
-program = "/bin/zsh"
+# [shell]
+# program = "/bin/zsh"
 
 [mouse]
 hide_when_typing = true
