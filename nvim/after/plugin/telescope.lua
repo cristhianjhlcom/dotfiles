@@ -39,7 +39,6 @@ telescope.setup({
                 ['<C-Up>'] = actions.cycle_history_prev,
             },
         },
-        file_ignore_pattern = { '.git/', 'node_modules/', 'vendor/' },
     },
     pickers = {
         find_files = {
