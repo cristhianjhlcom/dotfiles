@@ -24,16 +24,29 @@ return {
       linehl              = true,
       word_diff           = false,
       current_line_blame  = false,
-    })
+      on_attach = function(bufnr)
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
 
-    vim.keymap.set('n', ']g', ":Gitsigns next_hunk<CR>")
-    vim.keymap.set('n', '[g', ":Gitsigns next_hunk<CR>")
-    vim.keymap.set('n', 'gp', ":Gitsigns preview_hunk<CR>")
-    vim.keymap.set('n', 'gs', ":Gitsigns stage_hunk<CR>")
-    vim.keymap.set('n', 'gS', ":Gitsigns undo_stage_hunk<CR>")
-    vim.keymap.set('n', 'gsb', ":Gitsigns stage_buffer<CR>")
-    vim.keymap.set('n', 'gb', ":Gitsigns blame<CR>")
-    vim.keymap.set('n', '<Leader>gcc', ":G commit -m ")
+        map('n', ']c', function()
+          if vim.wo.diff then
+            vim.cmd.normal({']c', bang = true})
+          else
+            gitsigns.nav_hunk('next')
+          end
+        end)
+
+        map('n', '[c', function()
+          if vim.wo.diff then
+            vim.cmd.normal({'[c', bang = true})
+          else
+            gitsigns.nav_hunk('prev')
+          end
+        end)
+
         map('n', '<Leader>hs', gitsigns.stage_hunk)
         map('n', '<Leader>hu', gitsigns.undo_stage_hunk)
         map('n', '<Leader>hr', gitsigns.reset_hunk)
