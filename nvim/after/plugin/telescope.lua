@@ -77,6 +77,7 @@ vim.keymap.set('n', '<Leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps'
 vim.keymap.set('n', '<Leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' });
 vim.keymap.set('n', '<Leader>sw', builtin.grep_string, { desc = '[S]earch current [Word]' })
 vim.keymap.set('n', '<Leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<Leader>sgs', builtin.git_status, { desc = '[S]earch [G]it [S]tatus' })
 vim.keymap.set('n', '<Leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<Leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<Leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
