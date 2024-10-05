@@ -1,6 +1,9 @@
 local status_mason_ok, mason = pcall(require, "mason")
 
-if (not status_mason_ok) then return end
+if (not status_mason_ok) then
+    print("Mason error -> "..status_mason_ok)
+    return
+end
 
 mason.setup({
     ui = {
@@ -19,7 +22,7 @@ local servers = {
     phpactor = {
         cmd = { "phpactor", "language-server" },
         filetypes = { "php", "blade" },
-        -- root_dir = require("lspconfig").util.root_pattern("composer.json", ".git"),
+        root_dir = require("lspconfig").util.root_pattern("composer.json", ".git"),
         init_options = {
             ["language_server_phpstan.enabled"] = false,
             ["language_server_psalm.enabled"] = false,
@@ -47,7 +50,10 @@ local servers = {
 local ensure_installed = vim.tbl_keys(servers)
 local status_mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 
-if (not status_mason_lspconfig_ok) then return end
+if (not status_mason_lspconfig_ok) then
+    print("Mason LSP error -> ", status_mason_lspconfig_ok)
+    return
+end
 
 mason_lspconfig.setup({
     ensure_installed = ensure_installed,
@@ -55,7 +61,7 @@ mason_lspconfig.setup({
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     -- Format on Save.
     vim.api.nvim_create_autocmd('BufWritePre', {
         group = vim.api.nvim_create_augroup('Format', { clear = true }),
@@ -158,10 +164,6 @@ cmp.setup({
         { name = "buffer" },   -- text within the current buffer
         { name = "path" },     -- file system paths
     },
-    experimental = {
-        -- ghost_text = {
-        --     hl_group = "CmpGhostText",
-        -- },
-    },
+    experimental = {},
     sorting = defaults.sorting,
 })

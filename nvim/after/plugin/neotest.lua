@@ -1,7 +1,6 @@
 local ok, neotest = pcall(require, "neotest")
 
 if (not ok) then
-	print("Feiled to load neotest -> ", neotest)
 	return
 end
 
