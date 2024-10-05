@@ -39,6 +39,11 @@ return {
       },
     })
 
+    map('n', 'gd', builtin.lsp_definitions, { desc = '[G]oto [D]efinitions' })
+    map('n', 'gr', builtin.lsp_references, { desc = '[G]oto [R]eferences' })
+    map('n', 'gI', builtin.lsp_implementations, { desc = '[G]oto [I]mplementations' })
+    map('n', 'D', builtin.lsp_type_definitions, { desc = 'Type [D]efinitions' })
+    map('n', 'ds', builtin.lsp_document_symbols, { desc = '[D]ocuments [S]ymbols' })
     map('n', '<Leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
     map('n', '<Leader>sg', builtin.git_status, { desc = '[S]earch [G]it Status' })
     map('n', '<Leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
