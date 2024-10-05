@@ -1,6 +1,9 @@
 local status_ok, ts = pcall(require, "nvim-treesitter.configs")
 
-if (not status_ok) then return end
+if (not status_ok) then
+    print("Treesitter error -> "..ts)
+    return
+end
 
 ts.setup({
     ensure_installed = {
