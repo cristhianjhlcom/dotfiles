@@ -1,6 +1,6 @@
-local status_ok, gitsigns = pcall(require, 'gitsigns')
+local ok, gitsigns = pcall(require, 'gitsigns')
 
-if not status_ok then
+if not ok then
   print('Error loading gitsigns!')
 end
 
@@ -30,3 +30,5 @@ vim.keymap.set('n', 'gt', ':Gitsigns toggle_current_line_blame<CR>')
 vim.keymap.set('n', 'glh', ':Gitsigns toggle_linehl<CR>')
 vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
 vim.keymap.set('n', 'gcc', ':G commit -m "')
+vim.keymap.set('n', 'gst', ':G status<CR>')
+vim.keymap.set('n', 'gpsm', ':G push origin main<CR>')
