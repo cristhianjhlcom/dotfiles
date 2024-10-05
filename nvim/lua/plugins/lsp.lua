@@ -2,9 +2,11 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
     'folke/neodev.nvim',
   },
   config = function()
+    local lsp = require "lspconfig"
     local on_attach = function(_, bufnr)
       local map = function(keys, func, desc)
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP -> ' .. desc })
@@ -22,8 +24,13 @@ return {
       end, 'Format buffer')
     end
 
+    require('mason-lspconfig').setup({
+      ensure_installed = {
+        'emmet_ls',
+      },
+    })
     require('neodev').setup()
-    require('lspconfig').lua_ls.setup({
+    lsp.lua_ls.setup({
       on_attach = on_attach,
       settings = {
         Lua = {
@@ -31,6 +38,10 @@ return {
           workspace = { checkThirdParty = false },
         },
       },
+    })
+    lsp.emmet_ls.setup({
+      on_attach = on_attach,
+      filetypes = { "html", "php", "blade" },
     })
   end,
 }

@@ -33,7 +33,7 @@ return {
       },
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { }
+        lualine_b = { },
         lualine_c = { 'branch', file_icon, { 'filename', path = 1 } },
         lualine_x = { 'diagnostics', 'filetype' },
         lualine_y = { 'progress' },
