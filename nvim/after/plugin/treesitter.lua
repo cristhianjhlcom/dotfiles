@@ -8,6 +8,7 @@ end
 ts.setup({
     ensure_installed = {
         'lua',
+        'luadoc',
         'c',
         'typescript',
         'javascript',
