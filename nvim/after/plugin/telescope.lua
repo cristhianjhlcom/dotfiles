@@ -15,6 +15,7 @@ telescope.setup({
         file_ignore_patterns = { '.git/', 'node_modules/', 'vendor/', 'dist/', 'build/' },
         color_devicons = true,
         border = true,
+        result_title = false,
         winblend = 0,
         layout_strategy = 'horizontal',
         path_display = { "truncate" },
