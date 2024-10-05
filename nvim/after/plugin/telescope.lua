@@ -12,6 +12,7 @@ local actions = require('telescope.actions')
 
 telescope.setup({
     defaults = {
+        file_ignore_patterns = { '.git/', 'node_modules/', 'vendor/', 'dist/', 'build/' },
         color_devicons = true,
         border = true,
         winblend = 0,
