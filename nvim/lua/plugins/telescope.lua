@@ -7,6 +7,7 @@ return {
   config = function()
     local telescope = require "telescope"
     local builtin = require "telescope.builtin"
+    local actions = require "telescope.actions"
     local function map(mode, l, r, opts)
       vim.keymap.set(mode, l, r, opts)
     end
@@ -36,6 +37,13 @@ return {
         selection_strategy = "reset",
         sorting_strategy = "ascending",
         scroll_strategy = "cycle",
+        mappings = {
+          i = {
+            ['<Esc>'] = actions.close,
+            ['<C-Down>'] = actions.cycle_history_next,
+            ['<C-Up>'] = actions.cycle_history_prev,
+          },
+        },
       },
     })
 
