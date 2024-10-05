@@ -1,1 +1,1 @@
-print("HELLO LUA")
+require('config')
