@@ -1,7 +1,8 @@
 return {
   'lewis6991/gitsigns.nvim',
   config = function()
-    require('gitsigns').setup({
+    local gitsigns = require('gitsigns')
+    gitsigns.setup({
       signs = {
         add          = { text = '┃' },
         change       = { text = '┃' },
@@ -21,7 +22,7 @@ return {
       signs_staged_enable = true,
       signcolumn          = true,
       numhl               = true,
-      linehl              = true,
+      linehl              = false,
       word_diff           = false,
       current_line_blame  = false,
       on_attach = function(bufnr)
