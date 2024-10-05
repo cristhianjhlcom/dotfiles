@@ -27,6 +27,12 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         'emmet_ls',
+        'phpactor',
+        'pyright',
+        'clangd',
+        'tailwindcss',
+        'cssls',
+        'ts_ls',
       },
     })
     require('neodev').setup()
@@ -39,9 +45,37 @@ return {
         },
       },
     })
+    lsp.phpactor.setup({
+      cmd = { 'phpactor', 'language-server' },
+      filetypes = { 'php', 'blade' },
+      root_dir = require("lspconfig").util.root_pattern('composer.json', '.git'),
+      init_options = {
+        ['language_server_phpstan.enabled'] = false,
+        ['language_server_psalm.enabled'] = false,
+      },
+    })
+    lsp.ts_ls.setup({
+      on_attach = on_attach,
+      filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
+    })
     lsp.emmet_ls.setup({
       on_attach = on_attach,
       filetypes = { "html", "php", "blade" },
+    })
+    lsp.pyright.setup({
+      on_attach = on_attach,
+    })
+    lsp.clangd.setup({
+      on_attach = on_attach,
+    })
+    lsp.html.setup({
+      on_attach = on_attach,
+    })
+    lsp.cssls.setup({
+      on_attach = on_attach,
+    })
+    lsp.tailwindcss.setup({
+      on_attach = on_attach,
     })
   end,
 }
