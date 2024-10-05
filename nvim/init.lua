@@ -1,1 +1,1 @@
-require('cristhianjhl')
+print("HELLO LUA")
