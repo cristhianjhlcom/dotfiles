@@ -37,11 +37,15 @@ return {
         map('n', '<Leader>hs', gitsigns.stage_hunk)
         map('n', '<Leader>hu', gitsigns.undo_stage_hunk)
         map('n', '<Leader>hr', gitsigns.reset_hunk)
-        map('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-        map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-        map('n', '<leader>hS', gitsigns.stage_buffer)
-        map('n', '<leader>hp', gitsigns.preview_hunk)
-        map('n', '<leader>hd', gitsigns.diffthis)
-        map('n', '<leader>hD', function() gitsigns.diffthis('~') end)
+        map('v', '<Leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+        map('v', '<Leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+        map('n', '<Leader>hS', gitsigns.stage_buffer)
+        map('n', '<Leader>hp', gitsigns.preview_hunk)
+        map('n', '<Leader>hd', gitsigns.diffthis)
+        map('n', '<Leader>hD', function() gitsigns.diffthis('~') end)
+        map('n', '<Leader>gcc', ':G commit -m "')
+        map('n', '<Leader>gpm', ':G push origin main<CR>')
+      end,
+    })
   end,
 }
