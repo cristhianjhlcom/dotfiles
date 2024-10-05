@@ -24,5 +24,7 @@ create_symlink "$DOTFILES/alacritty/themes/catppuccin-frappe.toml" "$HOME/.confi
 create_symlink "$DOTFILES/alacritty/themes/catppuccin-mocha.toml" "$HOME/.config/alacritty/themes/catppuccin-mocha.toml"
 create_symlink "$DOTFILES/alacritty/themes/catppuccin-latte.toml" "$HOME/.config/alacritty/themes/catppuccin-latte.toml"
 create_symlink "$DOTFILES/alacritty/themes/dreamsof.toml" "$HOME/.config/alacritty/themes/dreamsof.toml"
+create_symlink "$DOTFILES/alacritty/themes/sweetie_light.toml" "$HOME/.config/alacritty/themes/sweetie_light.toml"
+create_symlink "$DOTFILES/alacritty/themes/sweetie_dark.toml" "$HOME/.config/alacritty/themes/sweetie_dark.toml"
 create_symlink "$DOTFILES/i3/config" "$HOME/.config/i3/config"
 create_symlink "$DOTFILES/i3status/config" "$HOME/.config/i3status/config"

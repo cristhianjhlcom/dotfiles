@@ -1,6 +1,7 @@
 import = [
   # "~/.config/alacritty/themes/dreamsof.toml"
-  "~/.config/alacritty/themes/catppuccin-latte.toml"
+  # "~/.config/alacritty/themes/catppuccin-latte.toml"
+  "~/.config/alacritty/themes/sweetie_light.toml"
 ]
 
 live_config_reload = true
@@ -35,8 +36,8 @@ x = 0
 y = 0
 
 [window]
-padding.x = 2
-padding.y = 2
+padding.x = 0
+padding.y = 0
 dynamic_padding = true
 decorations = "Full"
 dynamic_title = true
