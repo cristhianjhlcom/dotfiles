@@ -1,4 +1,4 @@
-local map = function (mode, shortcut, cmd, options)
+local map = function(mode, shortcut, cmd, options)
   vim.keymap.set(mode, shortcut, cmd, options or {})
 end
 

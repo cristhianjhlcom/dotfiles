@@ -16,10 +16,11 @@
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
   "nvim-lspconfig": { "branch": "master", "commit": "16666f1bc40f69ce05eb1883fd8c0d076284d8a5" },
   "nvim-treesitter": { "branch": "master", "commit": "7821feb7e7d55a76b7ffeeb6b0bfb7b8f499ce94" },
+  "nvim-treesitter-textobjects": { "branch": "master", "commit": "4a2d05ec24eaa6b655c7d19092a3b6c0219d46b9" },
   "nvim-web-devicons": { "branch": "master", "commit": "56f17def81478e406e3a8ec4aa727558e79786f3" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "sweetie.nvim": { "branch": "master", "commit": "d4b3d94b57ffcd0229f567e050850248be2b1dad" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
-  "tree-sitter-blade": { "branch": "main", "commit": "4ad4d56aca189bf4fa18b8896f9ed4a5e5ddf618" },
+  "vim-blade": { "branch": "master", "commit": "9534101808cc320eef003129a40cab04b026a20c" },
   "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" }
 }

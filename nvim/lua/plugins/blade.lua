@@ -1,3 +1,3 @@
 return {
-  'EmranMR/tree-sitter-blade',
+  'jwalton512/vim-blade',
 }
