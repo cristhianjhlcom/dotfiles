@@ -1,1 +1,1 @@
-require('cristhianjhl')
+require('config')
