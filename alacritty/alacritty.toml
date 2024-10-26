@@ -1,5 +1,6 @@
 import = [
-  "~/.config/alacritty/themes/dreamsof.toml"
+  # "~/.config/alacritty/themes/dreamsof.toml"
+  "~/.config/alacritty/themes/catppuccin-latte.toml"
 ]
 
 live_config_reload = true
@@ -15,7 +16,7 @@ draw_bold_text_with_bright_colors = true
 size = 15
 
 [font.bold]
-family = "JetBrains Mono NL Nerd Font Propo"
+family = "Inconsolata LGC Nerd Font Propo"
 style = "bold"
 
 [font.glyph_offset]
@@ -23,10 +24,10 @@ x = 0
 y = 0
 
 [font.italic]
-family = "JetBrains Mono NL Nerd Font Propo"
+family = "Inconsolata LGC Nerd Font Propo"
 
 [font.normal]
-family = "JetBrains Mono NL Nerd Font Propo"
+family = "Inconsolata LGC Nerd Font Propo"
 style = "Regular"
 
 [font.offset]
@@ -39,8 +40,8 @@ padding.y = 2
 dynamic_padding = true
 decorations = "Full"
 dynamic_title = true
-startup_mode = "Maximized"
-opacity = 0.95
+startup_mode = "Windowed"
+opacity = 1
 
 [window.dimensions]
 columns = 160
