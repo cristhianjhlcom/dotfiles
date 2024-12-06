@@ -14,22 +14,24 @@ duration = 0
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 15
+size = 16
+
+[font.normal]
+#family = "Inconsolata LGC Nerd Font Propo"
+#family = "Hack Nerd Font Propo"
+family = "JetBrainsMonoNLNerdFont"
+style = "Regular"
 
 [font.bold]
-family = "Inconsolata LGC Nerd Font Propo"
-style = "bold"
+#family = "Inconsolata LGC Nerd Font Propo"
+#family = "Hack Nerd Font Propo"
+#family = "JetBrainsMonoNLNerdFontPropoSemiBold"
+#style = "bold"
+#style = "SemiBold"
 
 [font.glyph_offset]
 x = 0
 y = 0
-
-[font.italic]
-family = "Inconsolata LGC Nerd Font Propo"
-
-[font.normal]
-family = "Inconsolata LGC Nerd Font Propo"
-style = "Regular"
 
 [font.offset]
 x = 0
