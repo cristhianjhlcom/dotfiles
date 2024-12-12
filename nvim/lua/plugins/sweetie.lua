@@ -9,7 +9,10 @@ return {
 
     vim.cmd([[colorscheme darcula]])
     vim.cmd([[set background=dark]])
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+    vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+    vim.cmd("hi LineNr guibg=NONE ctermbg=NONE")
+    vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
+    vim.cmd("hi WinBar guibg=NONE ctermbg=NONE")
   end,
 }

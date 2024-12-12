@@ -2,8 +2,10 @@ local map = function(mode, shortcut, cmd, options)
   vim.keymap.set(mode, shortcut, cmd, options or {})
 end
 
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Leave Terminal mode (if in terminal)" })
 map('n', '<Leader>pv', vim.cmd.Ex, { desc = 'Open Explorer File Tree' })
-map('n', '<Leader>k', '<CMD>nohlsearch<CR>', { desc = 'Remove Hightlight Search' })
+map("n", "<Leader>k", ":nohl<CR>", { desc = "[C]lear search [H]ighight" }) -- clear search highlight
+map("n", "<Leader>bx", ":bw<CR>", { desc = "[B]uffer [X]close (wipeout)" }) -- completely deletes current buffer (buffer wipeout)
 map('n', '<Leader>bd', '<CMD>bufdo bdelete<CR>', { desc = 'Delete Current Buffer' })
 map('n', '<C-h>', '<C-w>h', { desc = 'Go To Left Panel' })
 map('n', '<C-j>', '<C-w>j', { desc = 'Go To Down Panel' })
@@ -24,7 +26,15 @@ map('n', '<C-Up>', '<CMD>resize +2<CR>', { desc = 'Resize With Arrows' })
 map('n', '<C-Down>', '<CMD>resize -2<CR>', { desc = 'Resize With Arrows' })
 map('n', '<C-Left>', '<CMD>vertical resize -2<CR>', { desc = 'Resize With Arrows' })
 map('n', '<C-Right>', '<CMD>vertical resize +2<CR>', { desc = 'Resize With Arrows' })
+map("n", "<Leader>sv", "<C-w>v", { desc = "[S]plit [V]ertically" }) -- split vertically
+map("n", "<Leader>sh", "<C-w>s", { desc = "[S]plit [H]orizontally" }) -- split horizontally
+map("n", "<Leader>se", "<C-w>=", { desc = "Make Split Windows [=]equal width" }) -- make split windows equal width.
+map("n", "<Leader>sx", ":close<CR>", { desc = "Current [S]plit [X]Close" }) -- close current split window.
+map("n", "<Leader>w", ":set wrap!<CR>", { desc = "Toggle Word [W]rap" })
 map('i', '<A-j>', '<Esc><CMD>move .+1<CR>==gi', { desc = 'Move Text Up and Down' })
 map('i', '<A-k>', '<Esc><CMD>move .-2<CR>==gi', { desc = 'Move Text Up and Down' })
 map('x', '<A-j>', "<CMD>move '>+1<CR>gv-gv", { desc = 'Move Text Up and Down' })
 map('x', '<A-k>', "<CMD>move '<-2<CR>gv-gv", { desc = 'Move Text Up and Down' })
+map('n', '<Leader>xa', ":%bd|e#|bd#<CR>", { desc = "[X]Close [A]ll buffers but this one" })
+map("n", "<Leader>1", ":ConfigReload<CR> <BAR> :Mason<CR>", { desc = "Reload config" })
+map("n", "<Leader>2", ":e ~/.config/nvim/init.lua<CR>", { desc = "Edit nvim init.lua file" })
