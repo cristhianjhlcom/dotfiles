@@ -4,7 +4,7 @@ end
 
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Leave Terminal mode (if in terminal)" })
 map('n', '<Leader>pv', vim.cmd.Ex, { desc = 'Open Explorer File Tree' })
-map("n", "<Leader>k", ":nohl<CR>", { desc = "[C]lear search [H]ighight" }) -- clear search highlight
+map("n", "<Leader>k", ":nohlsearch<CR>", { desc = "[C]lear search [H]ighight" }) -- clear search highlight
 map("n", "<Leader>bx", ":bw<CR>", { desc = "[B]uffer [X]close (wipeout)" }) -- completely deletes current buffer (buffer wipeout)
 map('n', '<Leader>bd', '<CMD>bufdo bdelete<CR>', { desc = 'Delete Current Buffer' })
 map('n', '<C-h>', '<C-w>h', { desc = 'Go To Left Panel' })

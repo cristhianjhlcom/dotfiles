@@ -1,12 +1,14 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
+    'saghen/blink.cmp',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'folke/neodev.nvim',
   },
   config = function()
-    local lsp = require "lspconfig"
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
+    local lsp = require("lspconfig")
     local on_attach = function(_, bufnr)
       local map = function(keys, func, desc)
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP -> ' .. desc })
@@ -38,6 +40,7 @@ return {
     require('neodev').setup()
     lsp.lua_ls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       settings = {
         Lua = {
           telemetry = { enable = false },
@@ -46,6 +49,7 @@ return {
       },
     })
     lsp.phpactor.setup({
+      capabilities = capabilities,
       cmd = { 'phpactor', 'language-server' },
       filetypes = { 'php', 'blade' },
       root_dir = require("lspconfig").util.root_pattern('composer.json', '.git'),
@@ -56,26 +60,33 @@ return {
     })
     lsp.ts_ls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
     })
     lsp.emmet_ls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
       filetypes = { "html", "php", "blade" },
     })
     lsp.pyright.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
     lsp.clangd.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
     lsp.html.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
     lsp.cssls.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
     lsp.tailwindcss.setup({
       on_attach = on_attach,
+      capabilities = capabilities,
     })
   end,
 }
