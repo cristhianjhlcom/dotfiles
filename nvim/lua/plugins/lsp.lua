@@ -61,7 +61,14 @@ return {
     lsp.ts_ls.setup({
       on_attach = on_attach,
       capabilities = capabilities,
-      filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
+      filetypes = {
+        'javascript',
+        'javascriptreact',
+        'javascript.jsx',
+        'typescript',
+        'typescriptreact',
+        'typescript.tsx',
+      },
     })
     lsp.emmet_ls.setup({
       on_attach = on_attach,
