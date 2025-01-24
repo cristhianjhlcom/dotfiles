@@ -1,6 +1,6 @@
 return {
   "jay-babu/mason-nvim-dap.nvim",
-  event = "VaryLazy",
+  event = "VeryLazy",
   dependencies = {
     "williamboman/mason.nvim",
     "mfussenegger/nvim-dap",

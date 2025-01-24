@@ -26,6 +26,6 @@ vim.opt.listchars = {
 }
 vim.opt.updatetime = 100
 vim.opt.conceallevel = 1
-vim.schedule(function ()
+vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
