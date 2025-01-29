@@ -5,9 +5,32 @@ return {
     "mfussenegger/nvim-dap",
     "nvim-neotest/nvim-nio"
   },
-  config = function ()
+  config = function()
     local dap = require("dap")
     local dapui = require("dapui")
+
+    dapui.setup({
+      layouts = {
+        {
+          elements = {
+            { id = "scopes",      size = 0.3 },
+            { id = "breakpoints", size = 0.3 },
+            { id = "stacks",      size = 0.2 },
+            { id = "watches",     size = 0.2 },
+          },
+          size = 40,
+          position = "left",
+        },
+        {
+          elements = {
+            { id = "repl",    size = 0.5 },
+            { id = "console", size = 0.5 },
+          },
+          size = 10,
+          position = "bottom",
+        },
+      },
+    })
 
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()

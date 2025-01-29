@@ -24,25 +24,50 @@ return {
           'storage/logs/',
         },
         color_devicons = true,
-        winblend = 1,
-        layout_strategy = 'horizontal',
-        path_display = { 'truncate' },
+        winblend = 0,
+        layout_strategy = 'vertical',
+        path_display = { 'absolute' },
         layout_config = {
-          preview_cutoff = 0,
+          preview_cutoff = 9999,
           prompt_position = 'top',
-          width = 0.95,
-          height = 0.95,
-          preview_width = 0.65,
+          width = 0.5,
+          height = 0.8,
+          -- preview_width = 0.65,
         },
+        previewer = false,
+        theme = "dropdown",
         selection_strategy = "reset",
         sorting_strategy = "ascending",
         scroll_strategy = "cycle",
         mappings = {
           i = {
             ['<Esc>'] = actions.close,
-            ['<C-Down>'] = actions.cycle_history_next,
-            ['<C-Up>'] = actions.cycle_history_prev,
+            ['<C-n>'] = actions.cycle_history_next,
+            ['<C-p>'] = actions.cycle_history_prev,
           },
+        },
+      },
+      pickers = {
+        find_files = {
+          hidden = true,
+          follow = true,
+          previewer = false,
+          theme = "dropdown",
+        },
+        live_grep = {
+          previewer = false,
+        },
+        grep_string = {
+          hidden = true,
+          follow = true,
+          previewer = false,
+          theme = "dropdown",
+        },
+        buffers = {
+          hidden = true,
+          follow = true,
+          previewer = false,
+          theme = "dropdown",
         },
       },
     })
@@ -53,11 +78,18 @@ return {
     map('n', 'D', builtin.lsp_type_definitions, { desc = 'Type [D]efinitions' })
     map('n', 'ds', builtin.lsp_document_symbols, { desc = '[D]ocuments [S]ymbols' })
     map('n', '<Leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+    map('n', '<Leader>ss', builtin.live_grep, { desc = '[S]earch Live Grep' })
+    map('n', '<Leader>sw', function()
+      builtin.grep_string({
+        word_match = "-w",
+        search = vim.fn.expand("<cword>"),
+      })
+    end, { desc = '[S]earch Current [W]ord' })
     map('n', '<Leader>sg', builtin.git_status, { desc = '[S]earch [G]it Status' })
     map('n', '<Leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
     map('n', '<Leader>sh', builtin.help_tags, { desc = '[S]earch [H]elps' })
     map('n', '<C-p>', builtin.git_files, { desc = 'Search Git Files' })
-    map('n', '<Leader>sx', function ()
+    map('n', '<Leader>sx', function()
       builtin.find_files({
         cwd = vim.fn.stdpath('config')
       })
