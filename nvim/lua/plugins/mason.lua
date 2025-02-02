@@ -5,6 +5,7 @@ return {
 
     mason.setup({
       ensure_installed = {
+        "clang",
         "clang-format",
         "codelldb"
       }

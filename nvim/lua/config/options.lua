@@ -1,3 +1,5 @@
+vim.opt.colorcolumn = "80"
+vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.g.netrw_banner = 0
@@ -18,6 +20,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.list = true
+vim.g.rainbow_active = 1
 vim.opt.listchars = {
   eol = '↵',
   tab = '▸ ',

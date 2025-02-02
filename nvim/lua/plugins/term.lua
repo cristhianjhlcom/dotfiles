@@ -22,6 +22,11 @@ return {
     local make_clean = create_terminal("make clean")
     local make_run = create_terminal("make run")
 
+    vim.cmd([[
+      set makeprg=make
+      set errorformat=%f:%l:%m
+    ]])
+
     vim.keymap.set("n", "<leader>m", function()
       make_default:toggle()
     end, { desc = "Run Makefile default command and open terminal" })

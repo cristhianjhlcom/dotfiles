@@ -1,9 +1,9 @@
 return {
   -- "Carcuis/darcula.nvim",
   -- "NTBBloodbath/sweetie.nvim",
-  -- "morhetz/gruvbox",
+  "morhetz/gruvbox",
   -- "rebelot/kanagawa.nvim",
-  "Mofiqul/dracula.nvim",
+  -- "Mofiqul/dracula.nvim",
   lazy = false,
   priority = 1000,
   config = function()
@@ -11,9 +11,9 @@ return {
     -- vim.cmd([[set background=light]])
 
     -- vim.cmd([[colorscheme darcula]])
-    -- vim.cmd([[colorscheme gruvbox]])
+    vim.cmd([[colorscheme gruvbox]])
     -- vim.cmd([[colorscheme kanagawa]])
-    vim.cmd([[colorscheme dracula]])
+    -- vim.cmd([[colorscheme dracula]])
     vim.cmd([[set background=dark]])
 
     vim.cmd("hi Normal guibg=NONE ctermbg=NONE")

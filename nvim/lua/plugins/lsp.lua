@@ -22,7 +22,7 @@ return {
       map(']d', vim.diagnostic.goto_next, '[[][D] Goto Next')
       map('<Leader>f', function()
         vim.lsp.buf.format({ async = true })
-        vim.notify('Formatted successfully')
+        vim.notify('Formatted successfully', "info")
       end, 'Format buffer')
     end
 
@@ -118,10 +118,23 @@ return {
         map(']d', vim.diagnostic.goto_next, '[[][D] Goto Next')
         map('<Leader>f', function()
           vim.lsp.buf.format({ async = true })
-          vim.notify('Formatted successfully')
+          vim.notify('Formatted successfully', 'info')
         end, 'Format buffer')
       end,
       capabilities = capabilities,
+      handlers = {
+        ["window/showMessage"] = function(_, result, ctx)
+          local client = vim.lsp.get_client_by_id(ctx.client_id)
+          local lvl = ({
+            "error",
+            "warn",
+            "info",
+            "info"
+          })[result.type]
+
+          vim.notify(result.message, lvl, { title = client.name })
+        end,
+      },
     })
 
     lsp.html.setup({
