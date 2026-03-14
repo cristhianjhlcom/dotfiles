@@ -1,5 +1,8 @@
+local is_nvim_11 = vim.fn.has("nvim-0.11") == 1
+
 return {
   'neovim/nvim-lspconfig',
+  version = is_nvim_11 and nil or 'v2.*',
   dependencies = {
     'saghen/blink.cmp',
     'williamboman/mason.nvim',
@@ -21,7 +24,12 @@ return {
       map('[d', vim.diagnostic.goto_prev, '[[][D] Goto Previous')
       map(']d', vim.diagnostic.goto_next, '[[][D] Goto Next')
       map('<Leader>f', function()
-        vim.lsp.buf.format({ async = true })
+        local ok, conform = pcall(require, "conform")
+        if ok then
+          conform.format({ async = true, lsp_fallback = true })
+        else
+          vim.lsp.buf.format({ async = true })
+        end
         vim.notify('Formatted successfully', "info")
       end, 'Format buffer')
     end
@@ -29,15 +37,20 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         'lua_ls',
+        'html',
+        'cssls',
+        'tailwindcss',
         'emmet_ls',
         'phpactor',
         'pyright',
+        'rust_analyzer',
+        'gopls',
+        'ols',
         'clangd',
-        'tailwindcss',
-        'cssls',
         'ts_ls',
       },
       automatic_installation = false,
+      automatic_enable = is_nvim_11 or false,
     })
 
     require('neodev').setup()
@@ -89,52 +102,23 @@ return {
     })
 
     lsp.clangd.setup({
-      on_attach = function(client, bufnr)
-        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-        local map = function(keys, func, desc)
-          vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP -> ' .. desc })
-        end
-
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({
-            group = augroup,
-            buffer = bufnr,
-          })
-
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = bufnr })
-            end,
-          })
-        end
-
-        map('K', vim.lsp.buf.hover, 'Hover Documentation')
-        map('<Leader>rn', vim.lsp.buf.rename, '[R]e[N]ame')
-        map('<Leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-        map('<Leader>e', vim.diagnostic.open_float, 'Open Float Diagnostic')
-        map('[d', vim.diagnostic.goto_prev, '[[][D] Goto Previous')
-        map(']d', vim.diagnostic.goto_next, '[[][D] Goto Next')
-        map('<Leader>f', function()
-          vim.lsp.buf.format({ async = true })
-          vim.notify('Formatted successfully', 'info')
-        end, 'Format buffer')
-      end,
+      on_attach = on_attach,
       capabilities = capabilities,
-      handlers = {
-        ["window/showMessage"] = function(_, result, ctx)
-          local client = vim.lsp.get_client_by_id(ctx.client_id)
-          local lvl = ({
-            "error",
-            "warn",
-            "info",
-            "info"
-          })[result.type]
+    })
 
-          vim.notify(result.message, lvl, { title = client.name })
-        end,
-      },
+    lsp.rust_analyzer.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
+    lsp.gopls.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
+    lsp.ols.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
     })
 
     lsp.html.setup({
